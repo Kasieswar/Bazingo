@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Videosection from './components/Pages/videosection'
+import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import TalktoSeller from './components/Pages/talktoseller'
+import ScrollUp from './components/Modules/scrollup'
+import QuickMatch from './components/Pages/quickmatch'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <ScrollUp />
+        <Routes>
+          <Route path='/' element={<Videosection />} />
+          <Route path='/talktoseller' element={<TalktoSeller />} />
+          <Route path='/quickmatch' element={<QuickMatch />} />
+        </Routes>
+      </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

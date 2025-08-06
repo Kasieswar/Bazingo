@@ -1,0 +1,205 @@
+
+[
+  {
+    "name": "Sarah P.",
+    "category": "Kitchen",
+    "status": "Online",
+    "rating": 4.8,
+    "image": "Sara.png",
+    "hoverdesc": "🍲 Home-cooked essentials for daily use.",
+    "hoverloc": "📍 Gurugram, Haryana",
+    "description": "High-quality home appliances",
+    "location": "Harayana"
+  },
+  {
+    "name": "David S.",
+    "category": "Furniture",
+    "status": "Offline",
+    "rating": 4.8,
+    "image": "David.png",
+    "hoverdesc": "🛠️ Modern furniture crafted with care.",
+    "hoverloc": "📍 Bengaluru, Karnataka",
+    "description": "High-quality home appliances",
+    "location": "Harayana"
+  },
+  {
+    "name": "Anna R.",
+    "category": "Beauty",
+    "status": "Online",
+    "rating": 4.8,
+    "image": "Anna.png",
+    "hoverdesc": "💄 Organic skin & beauty solutions.",
+    "hoverloc": "📍 Pune, Maharashtra",
+    "description": "High-quality home appliances",
+    "location": "Harayana"
+  },
+  {
+    "name": "Saria Ashan",
+    "category": "Fashion",
+    "status": "Offline",
+    "rating": 4.8,
+    "image": "Saria.png",
+    "hoverdesc": "👗 Hand-stitched fashion for every season.",
+    "hoverloc": "📍 Jaipur, Rajasthan",
+    "description": "High-quality home appliances",
+    "location": "Harayana"
+  },
+  {
+    "name": "Vijaya Sunkar",
+    "category": "Fashion",
+    "status": "Online",
+    "rating": 4.8,
+    "image": "Vijaya.png",
+    "hoverdesc": "🪡 Fusion wear for modern women.",
+    "hoverloc": "📍 Indore, MP",
+    "description": "High-quality home appliances",
+    "location": "Harayana"
+  },
+  {
+    "name": "Kinky Selfida",
+    "category": "Kids & Toys",
+    "status": "Offline",
+    "rating": 4.8,
+    "image": "Kinky.png",
+    "hoverdesc": "🧸 Learning through play, every day.",
+    "hoverloc": "📍 Kochi, Kerala",
+    "description": "High-quality home appliances",
+    "location": "Harayana"
+  },
+  {
+    "name": "Rohan Mahran",
+    "category": "Electronics",
+    "status": "Online",
+    "rating": 4.8,
+    "image": "Rohan.png",
+    "hoverdesc": "⚡ Smart tech, fast shipping.",
+    "hoverloc": "📍 Hyderabad, Telangana",
+    "description": "High-quality home appliances",
+    "location": "Harayana"
+  },
+  {
+    "name": "Deeya Pania",
+    "category": "Beauty",
+    "status": "Offline",
+    "rating": 4.8,
+    "image": "Deeya.png",
+    "hoverdesc": "🌼 Ayurvedic care for all ages.",
+    "hoverloc": "📍 Ahmedabad, Gujarat",
+    "description": "High-quality home appliances",
+    "location": "Harayana"
+  },
+  {
+    "name": "Singh Kashia",
+    "category": "Furniture",
+    "status": "Online",
+    "rating": 4.8,
+    "image": "Singh.png",
+    "hoverdesc": "🪑 Smart storage & minimal living.",
+    "hoverloc": "📍 Noida, UP",
+    "description": "High-quality home appliances",
+    "location": "Harayana"
+  },
+  {
+    "name": "Anna R.",
+    "category": "Beauty",
+    "status": "Online",
+    "rating": 4.8,
+    "image": "Anna.png",
+    "hoverdesc": "💄 Organic skin & beauty solutions.",
+    "hoverloc": "📍 Pune, Maharashtra",
+    "description": "High-quality home appliances",
+    "location": "Harayana"
+  },
+  {
+    "name": "Saria Ashan",
+    "category": "Fashion",
+    "status": "Offline",
+    "rating": 4.8,
+    "image": "Saria.png",
+    "hoverdesc": "👗 Hand-stitched fashion for every season.",
+    "hoverloc": "📍 Jaipur, Rajasthan",
+    "description": "High-quality home appliances",
+    "location": "Harayana"
+  },
+  {
+    "name": "Sarah P.",
+    "category": "Kitchen",
+    "status": "Online",
+    "rating": 4.8,
+    "image": "Sara.png",
+    "hoverdesc": "🍲 Home-cooked essentials for daily use.",
+    "hoverloc": "📍 Gurugram, Haryana",
+    "description": "High-quality home appliances",
+    "location": "Harayana"
+  },
+  {
+    "name": "Rohan Mahran",
+    "category": "Electronics",
+    "status": "Online",
+    "rating": 4.8,
+    "image": "Rohan.png",
+    "hoverdesc": "⚡ Smart tech, fast shipping.",
+    "hoverloc": "📍 Hyderabad, Telangana",
+    "description": "High-quality home appliances",
+    "location": "Harayana"
+  },
+  
+  {
+    "name": "Kinky Selfida",
+    "category": "Kids & Toys",
+    "status": "Offline",
+    "rating": 4.8,
+    "image": "Kinky.png",
+    "hoverdesc": "🧸 Learning through play, every day.",
+    "hoverloc": "📍 Kochi, Kerala",
+    "description": "High-quality home appliances",
+    "location": "Harayana"
+  },
+  {
+    "name": "Singh Kashia",
+    "category": "Furniture",
+    "status": "Online",
+    "rating": 4.8,
+    "image": "Singh.png",
+    "hoverdesc": "🪑 Smart storage & minimal living.",
+    "hoverloc": "📍 Noida, UP",
+    "description": "High-quality home appliances",
+    "location": "Harayana"
+  },
+  {
+    "name": "David S.",
+    "category": "Furniture",
+    "status": "Offline",
+    "rating": 4.8,
+    "image": "David.png",
+    "hoverdesc": "🛠️ Modern furniture crafted with care.",
+    "hoverloc": "📍 Bengaluru, Karnataka",
+    "description": "High-quality home appliances",
+    "location": "Harayana"
+  },
+  
+  {
+    "name": "Deeya Pania",
+    "category": "Beauty",
+    "status": "Offline",
+    "rating": 4.8,
+    "image": "Deeya.png",
+    "hoverdesc": "🌼 Ayurvedic care for all ages.",
+    "hoverloc": "📍 Ahmedabad, Gujarat",
+    "description": "High-quality home appliances",
+    "location": "Harayana"
+  },
+  {
+    "name": "Vijaya Sunkar",
+    "category": "Fashion",
+    "status": "Online",
+    "rating": 4.8,
+    "image": "Vijaya.png",
+    "hoverdesc": "🪡 Fusion wear for modern women.",
+    "hoverloc": "📍 Indore, MP",
+    "description": "High-quality home appliances",
+    "location": "Harayana"
+  }
+  
+  
+]
