@@ -694,6 +694,7 @@
 .featured-sellers-section {
   background-color: #D4F1F4;
   padding: 60px 40px;
+  text-align: center;
 }
 
 .section-title {
@@ -708,11 +709,11 @@
   margin-bottom: 50px;
 }
 
-.sellers-grid {
+.sellerss-grid {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 100px;
+  gap: 60px;
 }
 
 .sellers-card {

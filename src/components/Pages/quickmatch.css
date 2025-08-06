@@ -4,7 +4,7 @@
 }
 
 .quickmatch-hero {
-  padding: 130px 100px;
+  padding: 130px 150px;
   background-color: #d4f1f4;
   margin-top: -100px;
 }
@@ -14,7 +14,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 160px;
+  gap: 120px;
   max-width: 1400px;
   margin: auto;
 }
@@ -104,6 +104,125 @@
 .hero-form button:hover {
     background-color: #0097A7;
     transition: all 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 1024px) {
+  .quickmatch-hero {
+    padding: 120px 50px;
+  }
+
+  .hero-container-quick {
+    gap: 100px;
+  }
+
+  .hero-text h2 {
+    font-size: 36px;
+  }
+
+  .hero-text p {
+    font-size: 18px;
+  }
+
+  .hero-btn {
+    width: 220px;
+    height: 45px;
+    font-size: 15px;
+  }
+
+  .hero-form {
+    padding: 30px;
+  }
+
+  .hero-form h3 {
+    font-size: 26px;
+  }
+}
+
+/* Tablet - 768px */
+@media screen and (max-width: 768px) {
+  .quickmatch-hero {
+    padding: 120px 30px;
+  }
+
+  .hero-container-quick {
+    gap: 60px;
+  }
+
+  .hero-text,
+  .hero-form {
+    max-width: 50%;
+    width: 40%;
+  }
+
+  .hero-text h2 {
+    font-size: 32px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .hero-btn {
+    width: 80%; 
+  }
+
+  .hero-form {
+    padding: 30px;
+  }
+
+  .hero-form h3 {
+    font-size: 24px;
+  }
+}
+
+/* Mobile - 426px */
+@media screen and (max-width: 426px) {
+  .quickmatch-hero {
+    padding: 120px 20px;
+  }
+
+  .hero-container-quick {
+    gap: 40px;
+    flex-direction: column;
+  }
+
+  .hero-text,
+  .hero-form {
+    width: 90%;
+    max-width: 90%;
+  }
+
+  .hero-text h2 {
+    font-size: 26px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .hero-btn {
+    font-size: 14px;
+    height: 42px;
+    width: 60%;
+  }
+
+  .hero-form {
+    padding: 20px;
+  }
+
+  .hero-form input,
+  .hero-form select {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .hero-form h3 {
+    font-size: 22px;
+  }
+
+  .hero-form button {
+    font-size: 14px;
+  }
 }
 
 

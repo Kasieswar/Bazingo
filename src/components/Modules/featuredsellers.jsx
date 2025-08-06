@@ -30,7 +30,7 @@ function featuredsellers() {
       <h2 className="section-title">Featured Sellers</h2>
       <p className="section-subtitle">Explore stores from top-rated sellers</p>
 
-      <div className="sellers-grid">
+      <div className="sellerss-grid">
         {sellers.map((seller, index) => (
           <div className="sellers-card" key={index}>
             <img src={seller.image} alt={seller.name} className="sellers-image" />
