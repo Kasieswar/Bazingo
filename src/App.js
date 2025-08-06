@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import TalktoSeller from './components/Pages/talktoseller'
 import ScrollUp from './components/Modules/scrollup'
 import QuickMatch from './components/Pages/quickmatch'
+import Community from './components/Pages/community'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path='/' element={<Videosection />} />
           <Route path='/talktoseller' element={<TalktoSeller />} />
           <Route path='/quickmatch' element={<QuickMatch />} />
+          <Route path='/community' element={<Community />} />
         </Routes>
       </BrowserRouter>
     </div>
