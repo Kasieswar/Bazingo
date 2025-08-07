@@ -6,7 +6,7 @@ function communityhero() {
     <div>
       <section className="community-hero">
       <div className="hero-container-community">
-        {/* Left Side Content */}
+        {/* Left Side */}
         <div className="hero-texts">
           <h2>
             Join the BuyLive<br />
@@ -21,7 +21,7 @@ function communityhero() {
           
         </div>
 
-        {/* Right Side illustration */}
+        {/* Right Side */}
         <div className="illustration">
           <img src={rafiki} alt="Illustration" />
         </div>
