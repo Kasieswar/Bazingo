@@ -1,0 +1,145 @@
+import React from 'react'
+
+function communitysection() {
+  return (
+    <div>
+      <section className="community-container">
+      <div className="main-content">
+        {/* Left Side - Discussion Categories + Latest Posts */}
+        <div className="left-section">
+          {/* Discussion Categories */}
+          <div className="discussion-categories">
+            <h2>Discussion Categories</h2>
+                <div className="category-grid">
+                    {[
+                        { title: "General Discussion", color: "blue", desc: "Open discussions about community topics, introductions, and general questions.", posts: "324", icon: "fa-comments" },
+                        { title: "Buying Tips", color: "green", desc: "Strategies and advice for making smart purchasing decisions and finding deals.", posts: "124", icon: "fa-bag-shopping" },
+                        { title: "Selling Strategies", color: "purple", desc: "Tips and techniques to improve your selling performance and conversion rates.", posts: "124", icon: "fa-chart-line" },
+                        { title: "Product Queries", color: "pink", desc: "Questions and answers about specific products, features, and compatibility issues.", posts: "324", icon: "fa-circle-question" },
+                        { title: "Success Stories", color: "orange", desc: "Share your achievements and learn from others’ success stories in the community.", posts: "124", icon: "fa-trophy" },
+                        { title: "Marketing & Discussion", color: "teal", desc: "Strategies for promoting your products and engaging with your audience effectively.", posts: "124", icon: "fa-bullhorn" },
+                    ].map((cat, idx) => (
+                        <div className="category-cardss" key={idx}>
+                        <div className={`icon-wrapper ${cat.color}`}>
+                            <i className={`fas ${cat.icon} icon`}></i>
+                        </div>
+                        <div className="content">
+                            <h3>{cat.title}</h3>
+                            <p>{cat.desc}</p>
+                            <div className="meta">
+                            <span>{cat.posts} posts</span>
+                            <a href="#">Explore →</a>
+                            </div>
+                        </div>
+                        </div>
+                    ))}
+                    </div>
+                </div>
+
+          {/* Latest Posts
+          <div className="latest-posts">
+            <div className="posts-header">
+              <h2>Latest Posts</h2>
+              <a href="#">See all →</a>
+            </div>
+            {[
+              {
+                tag: "Selling Strategies",
+                user: "John Smith",
+                time: "2 hours ago",
+                text: "How I increased my conversion rate by 35% with these simple tips",
+                body: "After struggling with low conversion rates for months, I implemented these strategies...",
+                comments: 24,
+                likes: 18,
+              },
+              {
+                tag: "Buying Tips",
+                user: "Jane Doe",
+                time: "Yesterday",
+                text: "Guide to negotiating the best deals with suppliers",
+                body: "Negotiation is an art that can save you thousands. Here's my guide...",
+                comments: 45,
+                likes: 54,
+              },
+              {
+                tag: "Product Queries",
+                user: "Mike P.",
+                time: "5 days ago",
+                text: "Comparing the top 5 inventory management tools in 2023",
+                body: "After testing dozens of inventory solutions, these are the top 5 I recommend...",
+                comments: 30,
+                likes: 14,
+              }
+            ].map((post, i) => (
+              <div className="post-card" key={i}>
+                <div className="post-meta">
+                  <span className="tag">{post.tag}</span>
+                  <span className="time">{post.time}</span>
+                </div>
+                <h3>{post.text}</h3>
+                <p>{post.body}</p>
+                <div className="post-footer">
+                  <span>💬 {post.comments} comments</span>
+                  <span>❤️ {post.likes} likes</span>
+                </div>
+              </div>
+            ))}
+          </div> */}
+        </div>
+
+        {/* Right Side Panel */}
+        <div className="right-sidebar">
+          {/* Create New Post */}
+          <div className="new-post-box">
+            <p>Have something to share?</p>
+            <span>Your insights and questions help our community grow stronger.</span>
+            <button><i className={`fas fa-pen-to-square icon`}></i> Create New Post</button>
+          </div>
+
+          {/* Tags */}
+          <div className="tags-box">
+            <h4>Explore by Tags</h4>
+            <div className="tags">
+              {["#shipping", "#product-reels", "#first-sale", "#seller-struggles", "#pricing-tips", "#feedback", "#promotion-hacks", "#trust-building", "#seller-support"].map((tag, i) => (
+                <span key={i}>{tag}</span>
+              ))}
+            </div>
+          </div>
+
+          {/* How It Works */}
+          <div className="how-it-works">
+            <h4>How it works?</h4>
+            <ol>
+              <li>
+                <div className="text">
+                <strong>Join the conversation</strong><br />Browse categories and find discussions that interest you.</div></li>
+              <li>
+                <div className="text">
+                <strong>Ask questions</strong><br />Create new posts to get help from community experts.</div></li>
+              <li>
+                <div className="text">
+                <strong>Share your knowledge</strong><br />Help others by answering questions and sharing tips.</div></li>
+              <li>
+                <div className="text">
+                <strong>Grow together</strong><br />Build your reputation and network with like-minded individuals.</div></li>
+            </ol>
+          </div>
+
+          {/* Community Stats */}
+          <div className="stats-box">
+            <h4>Community Stats</h4>
+            <div className="stats">
+              <div className='stats1'><strong>2.4k</strong><br /><span>Members</span></div>
+              <div className='stats2'><strong>1.7k</strong><br /><span>Posts</span></div>
+              <div className='stats3'><strong>3.2k</strong><br /><span>Comments</span></div>
+              <div className='stats4'><strong>82</strong><br /><span>Online Now</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+  )
+}
+
+export default communitysection
