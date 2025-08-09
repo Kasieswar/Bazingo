@@ -36,7 +36,7 @@ function communitysection() {
                     </div>
                 </div>
 
-          {/* Latest Posts
+          {/* Latest Posts */}
           <div className="latest-posts">
             <div className="posts-header">
               <h2>Latest Posts</h2>
@@ -48,30 +48,37 @@ function communitysection() {
                 user: "John Smith",
                 time: "2 hours ago",
                 text: "How I increased my conversion rate by 35% with these simple tips",
-                body: "After struggling with low conversion rates for months, I implemented these strategies...",
+                body: "After struggling with low conversion rates for months, I implemented these strategies and saw immediate improvements in my sales performance...",
                 comments: 24,
                 likes: 18,
+                img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
               },
               {
                 tag: "Buying Tips",
                 user: "Jane Doe",
                 time: "Yesterday",
                 text: "Guide to negotiating the best deals with suppliers",
-                body: "Negotiation is an art that can save you thousands. Here's my guide...",
+                body: "Negotiation is an art that can save you thousands. In this comprehensive guide, I share my proven techniques for getting better deals...",
                 comments: 45,
                 likes: 54,
+                img: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
               },
               {
                 tag: "Product Queries",
                 user: "Mike P.",
                 time: "5 days ago",
                 text: "Comparing the top 5 inventory management tools in 2023",
-                body: "After testing dozens of inventory solutions, these are the top 5 I recommend...",
+                body: "After testing dozens of inventory solutions, I've narrowed down the best options based on features, pricing, and ease of use...",
                 comments: 30,
                 likes: 14,
+                img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=761&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
               }
             ].map((post, i) => (
               <div className="post-card" key={i}>
+                <div className="image">
+                  <img src={post.img} alt="profile" />
+                </div>
+                <div>
                 <div className="post-meta">
                   <span className="tag">{post.tag}</span>
                   <span className="time">{post.time}</span>
@@ -82,9 +89,10 @@ function communitysection() {
                   <span>💬 {post.comments} comments</span>
                   <span>❤️ {post.likes} likes</span>
                 </div>
+                </div>
               </div>
             ))}
-          </div> */}
+          </div>
         </div>
 
         {/* Right Side Panel */}

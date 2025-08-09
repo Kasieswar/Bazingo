@@ -268,7 +268,6 @@
   position: relative;
   padding: 50px 70px;
   background-color: #d4f1f4;
-  
   overflow: hidden;
 }
 
@@ -290,11 +289,11 @@
   gap: 20px;
   overflow-x: auto;
   padding-bottom: 20px;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
 }
 
 .mentors-scroll::-webkit-scrollbar {
-  display: none; /* Chrome */
+  display: none;
 }
 
 .mentor-card {
@@ -353,6 +352,214 @@
 .mentor-card button:hover {
   background-color: #007c88;
 }
+
+
+@media (max-width: 1024px) {
+  .mentors-section {
+    padding: 40px 50px;
+  }
+
+  .mentors-section h2 {
+    font-size: 26px;
+  }
+
+  .mentors-section p {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+
+  .mentors-scroll {
+    gap: 15px;
+    padding-bottom: 15px;
+  }
+
+  .mentor-card {
+    width: 280px;
+    height: 340px;
+  }
+
+  .mentor-card h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .mentor-card .category {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .mentor-card .desc {
+    font-size: 12px;
+    margin-bottom: 12px;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .mentor-card button {
+    font-size: 16px;
+    padding: 8px 18px;
+  }
+
+  .scroll-button {
+    width: 38px;
+    height: 38px;
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .scroll-button.left {
+    left: 15px;
+  }
+
+  .scroll-button.right {
+    right: 15px;
+  }
+}
+
+/* Tablet Portrait - 768px */
+@media (max-width: 768px) {
+  .mentors-section {
+    padding: 35px 30px;
+  }
+
+  .mentors-section h2 {
+    font-size: 22px;
+  }
+
+  .mentors-section p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .mentors-scroll {
+    gap: 12px;
+  }
+
+  .mentor-card {
+    width: 250px;
+    height: 320px;
+  }
+
+  .mentor-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+  }
+
+  .mentor-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .mentor-card .category {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .mentor-card .desc {
+    font-size: 10px;
+    margin-bottom: 10px;
+    padding: 0 15px;
+  }
+
+  .mentor-card button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .scroll-button {
+    width: 36px;
+    height: 36px;
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .scroll-button.left {
+    left: 5px;
+  }
+
+  .scroll-button.right {
+    right: 5px;
+  }
+}
+
+/* Mobile - 426px */
+@media (max-width: 426px) {
+  .mentors-section {
+    padding: 25px 20px;
+  }
+
+  .mentors-section h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  .mentors-section p {
+    font-size: 12px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .mentors-scroll {
+    gap: 8px;
+    padding-bottom: 10px;
+  }
+
+  .mentor-card {
+    width: 160px;
+    height: 200px;
+    padding: 10px;
+  } 
+
+  .mentor-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+  }
+
+  .mentor-card h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  .mentor-card .category {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .mentor-card .desc {
+    font-size: 8px;
+    margin-bottom: 10px;
+    padding: 0 5px;
+    line-height: 1.2;
+  }
+
+  .mentor-card button {
+    font-size: 11px;
+    padding: 5px 10px;
+    border-radius: 15px;
+  }
+
+  .scroll-button {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    line-height: 26px;
+    top: 50%;
+  }
+
+  .scroll-button.left {
+    left: 2px;
+  }
+
+  .scroll-button.right {
+    right: 2px;
+  }
+}
+
 
 
 /* Community Section */
@@ -486,13 +693,32 @@
 .posts-header a {
   color: #0097a7;
   font-size: 14px;
+  text-decoration: none;
 }
 
 .post-card {
-  background: #f7f7f7;
-  padding: 20px;
+  background: #fafafa;
+  padding: 20px 40px;
   border-radius: 10px;
   margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.post-card:hover {
+  background: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+  transform: translateY(-6px);
+  transition: all 0.3s ease-in-out;
+}
+
+.post-card .image img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .post-meta {
@@ -511,8 +737,13 @@
 }
 
 .post-card h3 {
-  font-size: 16px;
+  font-size: 24px;
+  font-weight: 500;
   margin: 10px 0;
+}
+
+.post-card p {
+  font-size: 16px;
 }
 
 .post-footer {
@@ -701,4 +932,320 @@
   color: #757575;
   font-size: 12px;
   font-weight: 500;
+}
+
+
+/* Tablet Landscape - 1024px */
+@media (max-width: 1024px) {
+  .community-container {
+    padding: 20px;
+  }
+
+  .main-content {
+    gap: 20px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .category-cardss {
+    width: 100%;
+    max-width: 300px;
+    min-height: 220px;
+  }
+
+  .discussion-categories h2 {
+    font-size: 26px;
+  }
+
+  .post-card {
+    padding: 15px 25px;
+    gap: 20px;
+  }
+
+  .post-card h3 {
+    font-size: 20px;
+  }
+
+  .post-card p {
+    font-size: 14px;
+  }
+
+  .right-sidebar {
+    min-width: 200px;
+  }
+
+  .tags-box h4,
+  .how-it-works h4,
+  .stats-box h4 {
+    font-size: 20px;
+  }
+
+  .new-post-box p {
+    font-size: 18px;
+  }
+}
+
+/* Tablet Portrait - 768px */
+@media (max-width: 768px) {
+  .community-container {
+    padding: 15px 20px;
+  }
+
+  .main-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .left-section,
+  .right-sidebar {
+    flex: 1;
+    width: 100%;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .category-cardss {
+    width: 90%;
+    max-width: none;
+    min-height: 180px;
+    padding: 20px;
+  }
+
+  .category-cardss .content h3 {
+    font-size: 18px;
+  }
+
+  .category-cardss .content p {
+    font-size: 13px;
+    margin: 15px 0;
+  }
+
+  .discussion-categories h2 {
+    font-size: 24px;
+    padding-left: 60px;
+  }
+
+  .latest-posts {
+    margin-top: 30px;
+  }
+
+  .posts-header h2 {
+    font-size: 24px;
+  }
+
+  .post-card {
+    padding: 20px;
+    gap: 15px;  
+  }
+
+  .post-card h3 {
+    font-size: 18px;
+  }
+
+  .post-card p {
+    font-size: 14px;
+  }
+
+  .right-sidebar {
+    order: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .tags-box,
+  .how-it-works,
+  .stats-box,
+  .new-post-box {
+    width: 40%;
+  }
+
+  .stats-box {
+    height: auto;
+    max-height: 200px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .stats strong {
+    font-size: 20px !important;
+  }
+
+  .stats span {
+    font-size: 10px !important;
+  }
+
+  .tags span {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+
+  .how-it-works li {
+    font-size: 14px;
+  }
+}
+
+/* Mobile - 426px */
+@media (max-width: 426px) {
+  .community-container {
+    padding: 10px;
+  }
+
+  .main-content {
+    gap: 10px;
+  }
+
+  .category-grid {
+    gap: 20px;
+    grid-template-columns: 1fr;
+    padding: 40px;
+  }
+
+  .category-cardss {
+    padding: 20px;
+    width: 70%;
+    height: 150px;
+    gap: 15px;
+  }
+
+  .icon-wrapper {
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon-wrapper .icon {
+    font-size: 20px;
+  }
+
+  .category-cardss .content h3 {
+    font-size: 14px;
+  }
+
+  .category-cardss .content p {
+    font-size: 12px;
+    margin: 10px 0;
+  }
+
+  .category-cardss .meta {
+    font-size: 10px;
+  }
+
+  .category-cardss .meta a {
+    font-size: 10px;
+  }
+
+  .discussion-categories h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .posts-header {
+    gap: 10px;
+  }
+
+  .posts-header h2 {
+    font-size: 20px;
+  }
+
+  .post-card {
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .post-card .image img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .post-card h3 {
+    font-size: 14px;
+  }
+
+  .post-card p {
+    font-size: 12px;
+  }
+
+  .post-meta {
+    gap: 8px;
+    font-size: 10px;
+  }
+
+  .post-footer {
+    gap: 15px;
+    font-size: 10px;
+    flex-wrap: wrap;
+  }
+
+  .new-post-box {
+    padding: 12px;
+  }
+
+  .new-post-box p {
+    font-size: 16px;
+  }
+
+  .new-post-box span {
+    font-size: 10px;
+  }
+
+  .new-post-box button {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .tags-box,
+  .how-it-works,
+  .stats-box {
+    padding: 12px;
+  }
+
+  .tags-box h4,
+  .how-it-works h4,
+  .stats-box h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .stats div {
+    padding: 6px;
+  }
+
+  .stats strong {
+    font-size: 18px !important;
+  }
+
+  .stats span {
+    font-size: 10px !important;
+  }
+
+  .tags span {
+    font-size: 10px;
+    padding: 2px 4px;
+    margin: 2px;
+  }
+
+  .how-it-works li {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+
+  .how-it-works li::before {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    margin-right: 8px;
+  }
 }
