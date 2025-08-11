@@ -6,6 +6,7 @@ import TalktoSeller from './components/Pages/talktoseller'
 import ScrollUp from './components/Modules/scrollup'
 import QuickMatch from './components/Pages/quickmatch'
 import Community from './components/Pages/community'
+import SellerPage from './components/Pages/sellerpage'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/talktoseller' element={<TalktoSeller />} />
           <Route path='/quickmatch' element={<QuickMatch />} />
           <Route path='/community' element={<Community />} />
+          <Route path='/sellerpage' element={<SellerPage />} />
         </Routes>
       </BrowserRouter>
     </div>

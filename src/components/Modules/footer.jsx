@@ -17,7 +17,7 @@ function footer() {
           <Link to="/talktoseller" className='footer-link'>Talk to Seller</Link>
           <Link to="/quickmatch" className='footer-link'>QuickMatch</Link>
           <Link to="/community" className='footer-link'>Community</Link>
-          <Link to="/sellers" className='footer-link'>Sellers</Link>
+          <Link to="/sellerpage" className='footer-link'>Sellers</Link>
         </div>
 
         <div className="footer-social">
