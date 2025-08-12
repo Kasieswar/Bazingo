@@ -6,6 +6,9 @@ import Footer from '../Modules/footer'
 import '../Pages/sellerpage.css'
 import WhySell from '../Modules/SellersPage/whysell'
 import HowItWorks from '../Modules/SellersPage/howitwork'
+import TestimonialFaq from '../Modules/SellersPage/testimonialfaq'
+import FeatureCTA from '../Modules/SellersPage/Featurecta'
+
 
 function sellerpage() {
   return (
@@ -13,7 +16,10 @@ function sellerpage() {
       <Header />
       <SellerHero />
       <WhySell />
+      <HowItWorks />
+      <TestimonialFaq />
       <Testimonials />
+      <FeatureCTA />
       <Footer />
     </div>
   )
