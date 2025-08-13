@@ -16,20 +16,20 @@ function herosectionvideo() {
             Watch reels, explore products, and connect directly with sellers – all in one place.
           </p>
           
-          <div className="hero-features">
-            <div className="feature-item">
-              <span className="feature-icon">🎬</span>
-              <span className="feature-text">Watch Product Reels</span>
+          <div className="heros-features">
+            <div className="feature-items">
+              <span className="feature-icons">🎬</span>
+              <span className="feature-texts">Watch Product Reels</span>
             </div>
             
-            <div className="feature-item">
-              <span className="feature-icon">🛍️</span>
-              <span className="feature-text">Get Real Insights Before You Buy</span>
+            <div className="feature-items">
+              <span className="feature-icons">🛍️</span>
+              <span className="feature-texts">Get Real Insights Before You Buy</span>
             </div>
             
-            <div className="feature-item">
-              <span className="feature-icon">💬</span>
-              <span className="feature-text">Talk Directly to the Seller</span>
+            <div className="feature-items">
+              <span className="feature-icons">💬</span>
+              <span className="feature-texts">Talk Directly to the Seller</span>
             </div>
           </div>
           

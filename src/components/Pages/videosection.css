@@ -47,11 +47,11 @@
   color: #003D40;
 }
 
-.hero-features {
+.heros-features {
   margin-bottom: 40px;
 }
 
-.feature-item {
+.feature-items {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
@@ -59,13 +59,13 @@
   color: #003D40;
 }
 
-.feature-icon {
+.feature-icons {
   font-size: 20px;
   margin-right: 12px;
   width: 32px;
 }
 
-.feature-text {
+.feature-texts {
   font-weight: 500;
 }
 

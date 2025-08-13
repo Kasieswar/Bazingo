@@ -5,22 +5,40 @@ import "intl-tel-input/build/css/intlTelInput.css";
 function Sellerhero() {
 
     const phoneInputRef = useRef(null);
+  const itiInstanceRef = useRef(null);
 
   useEffect(() => {
-    if (phoneInputRef.current) {
-      intlTelInput(phoneInputRef.current, {
+    if (phoneInputRef.current && !itiInstanceRef.current) {
+      // Destroy any existing instance first
+      if (itiInstanceRef.current) {
+        itiInstanceRef.current.destroy();
+      }
+      
+      // Initialize with more specific options
+      itiInstanceRef.current = intlTelInput(phoneInputRef.current, {
         initialCountry: "in",
         preferredCountries: ["in", "us", "gb"],
         separateDialCode: true,
+        autoPlaceholder: "aggressive",
+        nationalMode: false,
+        formatOnDisplay: true,
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
       });
     }
+
+    return () => {
+      if (itiInstanceRef.current) {
+        itiInstanceRef.current.destroy();
+        itiInstanceRef.current = null;
+      }
+    };
   }, []);
 
 
   return (
     <div>
-      <section className="community-hero">
-      <div className="hero-container-community">
+      <section className="seller-hero">
+      <div className="hero-container-seller">
         {/* Left Side */}
         <div className="hero-texts">
           <h2>
