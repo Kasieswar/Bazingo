@@ -7,6 +7,7 @@ import ScrollUp from './components/Modules/scrollup'
 import QuickMatch from './components/Pages/quickmatch'
 import Community from './components/Pages/community'
 import SellerPage from './components/Pages/sellerpage'
+import BusinessDetails from './components/Modules/SellersPage/businessdetails'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/quickmatch' element={<QuickMatch />} />
           <Route path='/community' element={<Community />} />
           <Route path='/sellerpage' element={<SellerPage />} />
+          <Route path='/businessdetails' element={<BusinessDetails />} />
         </Routes>
       </BrowserRouter>
     </div>
