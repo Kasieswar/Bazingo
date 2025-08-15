@@ -8,6 +8,8 @@ import QuickMatch from './components/Pages/quickmatch'
 import Community from './components/Pages/community'
 import SellerPage from './components/Pages/sellerpage'
 import BusinessDetails from './components/Modules/SellersPage/businessdetails'
+import ProductDetails from './components/Modules/SellersPage/productdetails'
+import AddGST from './components/Modules/SellersPage/addgst'
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path='/community' element={<Community />} />
           <Route path='/sellerpage' element={<SellerPage />} />
           <Route path='/businessdetails' element={<BusinessDetails />} />
+          <Route path='/productdetails' element={<ProductDetails />} />
+          <Route path='/gstdetails' element={ <AddGST />} />
         </Routes>
       </BrowserRouter>
     </div>
