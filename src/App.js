@@ -10,6 +10,15 @@ import SellerPage from './components/Pages/sellerpage'
 import BusinessDetails from './components/Modules/SellersPage/businessdetails'
 import ProductDetails from './components/Modules/SellersPage/productdetails'
 import AddGST from './components/Modules/SellersPage/addgst'
+import Dashboard from './components/Modules/SellerDashboard/dashboard'
+import Products from './components/Modules/SellerDashboard/products'
+import AddProduct from './components/Modules/SellerDashboard/addproduct'
+import Orders from './components/Modules/SellerDashboard/orders'
+import Messages from './components/Modules/SellerDashboard/messages'
+import BuyerLeads from './components/Modules/SellerDashboard/buyerleads'
+import Settings from './components/Modules/SellerDashboard/settings'
+import Help from './components/Modules/SellerDashboard/help'
+
 
 function App() {
   return (
@@ -25,6 +34,14 @@ function App() {
           <Route path='/businessdetails' element={<BusinessDetails />} />
           <Route path='/productdetails' element={<ProductDetails />} />
           <Route path='/gstdetails' element={ <AddGST />} />
+          <Route path='/seller-dashboard' element={<Dashboard />} />
+          <Route path='/products' element={<Products />} />
+          <Route path='/add-product' element={<AddProduct />} />
+          <Route path='/orders' element={<Orders />} />
+          <Route path='/messages' element={<Messages />} />
+          <Route path='/buyer-leads' element={<BuyerLeads />} />
+          <Route path='/settings' element={<Settings />} />
+          <Route path='/help' element={<Help />} />
         </Routes>
       </BrowserRouter>
     </div>
