@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './navbar';
+import './dashboard.css'
 
 function Dashboard() {
   return (
@@ -18,189 +19,189 @@ function Dashboard() {
             </div>
 
             {/* Stats Cards Row */}
-            <div className="stats-row">
-              <div className="stat-card">
-                <div className="stat-header">
-                  <div className="stat-icon">
+            <div className="stats-rows">
+              <div className="stats-cards">
+                <div className="stats-headers">
+                  <div className="stats-icons">
                     <i className="fas fa-eye"></i>
                   </div>
-                  <div className="stat-change positive">0%</div>
+                  <div className="stats-change positive">0%</div>
                 </div>
-                <div className="stat-content">
-                  <div className="stat-number">0</div>
-                  <div className="stat-label">Total Views</div>
+                <div className="stats-contents">
+                  <div className="stats-numbers">0</div>
+                  <div className="stats-labels">Total Views</div>
                 </div>
               </div>
 
-              <div className="stat-card">
-                <div className="stat-header">
-                  <div className="stat-icon">
+              <div className="stats-cards">
+                <div className="stats-headers">
+                  <div className="stats-icons">
                     <i className="fas fa-shopping-cart"></i>
                   </div>
-                  <div className="stat-change positive">0%</div>
+                  <div className="stats-change positive">0%</div>
                 </div>
-                <div className="stat-content">
-                  <div className="stat-number">0</div>
-                  <div className="stat-label">Total Orders</div>
+                <div className="stats-contents">
+                  <div className="stats-numbers">0</div>
+                  <div className="stats-labels">Total Orders</div>
                 </div>
               </div>
 
-              <div className="stat-card">
-                <div className="stat-header">
-                  <div className="stat-icon">
+              <div className="stats-cards">
+                <div className="stats-headers">
+                  <div className="stats-icons">
                     <i className="fas fa-question-circle"></i>
                   </div>
-                  <div className="stat-change new">0 New</div>
+                  <div className="stats-change new">0 New</div>
                 </div>
-                <div className="stat-content">
-                  <div className="stat-number">0</div>
-                  <div className="stat-label">Inquiries</div>
+                <div className="stats-contents">
+                  <div className="stats-numbers">0</div>
+                  <div className="stats-labels">Inquiries</div>
                 </div>
               </div>
 
-              <div className="stat-card">
-                <div className="stat-header">
-                  <div className="stat-icon">
+              <div className="stats-cards">
+                <div className="stats-headers">
+                  <div className="stats-icons">
                     <i className="fas fa-check-circle"></i>
                   </div>
-                  <div className="stat-change live">3 Live</div>
+                  <div className="stats-change live">3 Live</div>
                 </div>
-                <div className="stat-content">
-                  <div className="stat-number">3/5</div>
-                  <div className="stat-label">Products Live</div>
+                <div className="stats-contents">
+                  <div className="stats-numbers">3/5</div>
+                  <div className="stats-labels">Products Live</div>
                 </div>
               </div>
             </div>
 
             
             {/* Premium Upgrade Banner */}
-            <div className="upgrade-banner">
+            <div className="upgrade-banners">
               <div>
-              <h3 className="upgrade-title">Upgrade to Premium & Get 3x More Leads!</h3>
-              <div className="upgrade-features">
-                <div className="feature">
+              <h3 className="upgrade-titles">Upgrade to Premium & Get 3x More Leads!</h3>
+              <div className="upgrades-features">
+                <div className="features">
                   <i className="fas fa-check"></i>
                   <span>Verified Badge</span>
                 </div>
-                <div className="feature">
+                <div className="features">
                   <i className="fas fa-check"></i>
                   <span>Priority Support</span>
                 </div>
-                <div className="feature">
+                <div className="features">
                   <i className="fas fa-check"></i>
                   <span>Featured Listings</span>
                 </div>
-                <div className="feature">
+                <div className="features">
                   <i className="fas fa-check"></i>
                   <span>Advanced Analytics</span>
                 </div>
               </div>
-              <button className="upgrade-btn">Upgrade Now</button>
+              <button className="upgrade-btns">Upgrade Now</button>
               </div>
-              <div className="crown-icon">
+              <div className="crown-icons">
                 <i className='fas fa-crown'></i>
               </div>
             </div>
 
             {/* Recent Buyer Messages */}
-            <div className="messages-section">
-              <div className="section-header">
-                <h3 className="section-title">Recent Buyer Messages</h3>
-                <button className="view-all-btn">View All</button>
+            <div className="messages-sections">
+              <div className="section-headers">
+                <h3 className="section-titles">Recent Buyer Messages</h3>
+                <button className="view-all-btns">View All</button>
               </div>
               
-              <div className="messages-list">
-                <div className="message-item">
-                  <div className="message-content">
-                    <div className="message-header">
-                      <span className="sender-name">Priya Sharma</span>
-                      <span className="message-time">2 hours ago</span>
+              <div className="messages-lists">
+                <div className="message-items">
+                  <div className="message-contents">
+                    <div className="message-headers">
+                      <span className="sender-names">Priya Sharma</span>
+                      <span className="message-times">2 hours ago</span>
                     </div>
-                    <p className="message-text">Interested in bulk order of smartphones. Can you provide wholesale pricing for 50 units ?</p>
+                    <p className="message-texts">Interested in bulk order of smartphones. Can you provide wholesale pricing for 50 units ?</p>
                   </div>
                 </div>
 
-                <div className="message-item">
-                  <div className="message-content">
-                    <div className="message-header">
-                      <span className="sender-name">Amit Patel</span>
-                      <span className="message-time">10 hours ago</span>
+                <div className="message-items">
+                  <div className="message-contents">
+                    <div className="message-headers">
+                      <span className="sender-names">Amit Patel</span>
+                      <span className="message-times">10 hours ago</span>
                     </div>
-                    <p className="message-text">Do you have warranty for the gaming laptop? Need it urgently for my office.</p>
+                    <p className="message-texts">Do you have warranty for the gaming laptop? Need it urgently for my office.</p>
                   </div>
                 </div>
 
-                <div className="message-item">
-                  <div className="message-content">
-                    <div className="message-header">
-                      <span className="sender-name">Sneha Reddy</span>
-                      <span className="message-time">1 day ago</span>
+                <div className="message-items">
+                  <div className="message-contents">
+                    <div className="message-headers">
+                      <span className="sender-names">Sneha Reddy</span>
+                      <span className="message-times">1 day ago</span>
                     </div>
-                    <p className="message-text">Can you ship to Bangalore ? What are the delivery charges for headphones?</p>
+                    <p className="message-texts">Can you ship to Bangalore ? What are the delivery charges for headphones?</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Buyer Leads */}
-            <div className="buyer-leads-section">
-              <div className="section-header">
-                <h3 className="section-title">Buyer Leads</h3>
-                <button className="update-preferences-btn">Update Preferences</button>
+            <div className="buyer-leads-sections">
+              <div className="section-headers">
+                <h3 className="section-titles">Buyer Leads</h3>
+                <button className="update-preferences-btns">Update Preferences</button>
               </div>
               
-              <div className="no-leads-content">
-                <div className="search-icon">
+              <div className="no-leads-contents">
+                <div className="search-icons">
                   <i className="fas fa-search"></i>
                 </div>
-                <h4 className="no-leads-title">No Relevant Leads Found</h4>
-                <p className="no-leads-text">We're actively searching for buyers matching your products</p>
-                <button className="view-recommended-btn">View Recommended Leads</button>
+                <h4 className="no-leads-titles">No Relevant Leads Found</h4>
+                <p className="no-leads-texts">We're actively searching for buyers matching your products</p>
+                <button className="view-recommended-btns">View Recommended Leads</button>
               </div>
             </div>
 
             {/* Active Services */}
-            <div className="active-services-section">
-              <div className="section-header">
-                <h3 className="section-title">Active Services</h3>
+            <div className="active-services-sections">
+              <div className="section-headers">
+                <h3 className="section-titles">Active Services</h3>
               </div>
               
-              <div className="services-grid">
-                <div className="service-card">
-                  <div className="service-icon sms">
+              <div className="services-grids">
+                <div className="service-cards">
+                  <div className="service-icons sms">
                     <i className="fas fa-sms"></i>
                   </div>
-                  <div className="service-content">
-                    <h4 className="service-title">SMS Alerts</h4>
-                    <span className="service-status active">Active</span>
+                  <div className="service-contents">
+                    <h4 className="service-titles">SMS Alerts</h4>
+                    <span className="services-status active">Active</span>
                   </div>
-                  <div className="service-settings">
+                  <div className="services-settings">
                     <i className="fas fa-cog"></i>
                   </div>
                 </div>
 
-                <div className="service-card">
-                  <div className="service-icon tender">
+                <div className="service-cards">
+                  <div className="service-icons tender">
                     <i className="fas fa-file-contract"></i>
                   </div>
-                  <div className="service-content">
-                    <h4 className="service-title">Tender Alerts</h4>
-                    <span className="service-status active">Active</span>
+                  <div className="service-contents">
+                    <h4 className="service-titles">Tender Alerts</h4>
+                    <span className="services-status active">Active</span>
                   </div>
-                  <div className="service-settings">
+                  <div className="services-settings">
                     <i className="fas fa-cog"></i>
                   </div>
                 </div>
 
-                <div className="service-card">
-                  <div className="service-icon notifications">
+                <div className="service-cards">
+                  <div className="service-icons notifications">
                     <i className="fas fa-bell"></i>
                   </div>
-                  <div className="service-content">
-                    <h4 className="service-title">Lead Notifications</h4>
-                    <span className="service-status active">Active</span>
+                  <div className="service-contents">
+                    <h4 className="service-titles">Lead Notifications</h4>
+                    <span className="services-status active">Active</span>
                   </div>
-                  <div className="service-settings">
+                  <div className="services-settings">
                     <i className="fas fa-cog"></i>
                   </div>
                 </div>
@@ -208,59 +209,59 @@ function Dashboard() {
             </div>
 
             {/* Your Products */}
-            <div className="products-section">
-              <div className="section-header">
-                <h3 className="section-title">Your Products</h3>
-                <button className="add-product-btn">
+            <div className="products-sections">
+              <div className="section-headers">
+                <h3 className="section-titles">Your Products</h3>
+                <button className="add-product-btns">
                   <i className="fas fa-plus"></i>
                   Add New Product
                 </button>
               </div>
               
-              <div className="products-grid">
-                <div className="product-card">
-                  <div className="product-image">
+              <div className="products-grids">
+                <div className="product-cards">
+                  <div className="product-images">
                     <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGhvbmV8ZW58MHx8MHx8fDA%3D" alt="Smartphone" />
-                    <div className="play-button">
+                    <div className="play-buttons">
                       <i className="fas fa-play"></i>
                     </div>
                   </div>
-                  <div className="product-info">
-                    <h4 className="product-name">Smartphone</h4>
-                    <span className="product-views">5 Views</span>
-                    <div className="product-actions">
+                  <div className="product-infos">
+                    <h4 className="product-names">Smartphone</h4>
+                    <span className="products-views">5 Views</span>
+                    <div className="products-actions">
                       <i className="fas fa-external-link-alt"></i>
                     </div>
                   </div>
                 </div>
 
-                <div className="product-card">
-                  <div className="product-image">
+                <div className="product-cards">
+                  <div className="product-images">
                     <img src="https://images.unsplash.com/photo-1589003077984-894e133dabab?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Bluetooth Speaker" />
-                    <div className="play-button">
+                    <div className="play-buttons">
                       <i className="fas fa-play"></i>
                     </div>
                   </div>
-                  <div className="product-info">
-                    <h4 className="product-name">Bluetooth Speaker</h4>
-                    <span className="product-views">3 Views</span>
-                    <div className="product-actions">
+                  <div className="product-infos">
+                    <h4 className="product-names">Bluetooth Speaker</h4>
+                    <span className="products-views">3 Views</span>
+                    <div className="products-actions">
                       <i className="fas fa-external-link-alt"></i>
                     </div>
                   </div>
                 </div>
 
-                <div className="product-card">
-                  <div className="product-image">
+                <div className="product-cards">
+                  <div className="product-images">
                     <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Headset" />
-                    <div className="play-button">
+                    <div className="play-buttons">
                       <i className="fas fa-play"></i>
                     </div>
                   </div>
-                  <div className="product-info">
-                    <h4 className="product-name">Headset</h4>
-                    <span className="product-views">7 Views</span>
-                    <div className="product-actions">
+                  <div className="product-infos">
+                    <h4 className="product-names">Headset</h4>
+                    <span className="products-views">7 Views</span>
+                    <div className="products-actions">
                       <i className="fas fa-external-link-alt"></i>
                     </div>
                   </div>
@@ -269,12 +270,12 @@ function Dashboard() {
             </div>
 
             {/* Bottom Action Buttons */}
-            <div className="bottom-actions">
-              <button className="action-btn primary">
+            <div className="bottoms-actions">
+              <button className="action-btns primarys">
                 <i className="fas fa-plus"></i>
                 Add New Product
               </button>
-              <button className="action-btn secondary">
+              <button className="action-btns secondarys">
                 <i className="fas fa-chart-line"></i>
                 Boost Visibility
               </button>
@@ -287,74 +288,74 @@ function Dashboard() {
           {/* Right Sidebar */}
           <div className="right-sidebar">
             {/* Profile Summary */}
-            <div className="profile-card">
-              <h3 className="card-title">Profile Summary</h3>
-              <div className="profile-info">
-                <h4 className="profile-name">Kasi Eswar</h4>
-                <div className="profile-category">
+            <div className="profile-cards">
+              <h3 className="card-titles">Profile Summary</h3>
+              <div className="profile-infos">
+                <h4 className="profile-names">Kasi Eswar</h4>
+                <div className="profile-categorys">
                   <i className="fas fa-circle"></i>
                   <span>Electronics</span>
                 </div>
                 
-                <div className="profile-details">
-                  <div className="detail-row">
-                    <span className="detail-label">Phone number :</span>
-                    <span className="detail-value">+91 7981189032</span>
+                <div className="profiles-details">
+                  <div className="detail-rows">
+                    <span className="detail-labels">Phone number :</span>
+                    <span className="detail-values">+91 7981189032</span>
                   </div>
-                  <div className="detail-row">
-                    <span className="detail-label">Email :</span>
-                    <span className="detail-value">eswar@gmail.com</span>
+                  <div className="detail-rows">
+                    <span className="detail-labels">Email :</span>
+                    <span className="detail-values">eswar@gmail.com</span>
                   </div>
-                  <div className="detail-row">
-                    <span className="detail-label">Status :</span>
-                    <span className="detail-value status-active">Active</span>
+                  <div className="detail-rows">
+                    <span className="detail-labels">Status :</span>
+                    <span className="detail-values status-active">Active</span>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Verification Status */}
-            <div className="verification-card">
-              <h3 className="card-title">Verification Status</h3>
-              <div className="verification-list">
-                <div className="verification-item verified">
+            <div className="verification-cards">
+              <h3 className="card-titles">Verification Status</h3>
+              <div className="verification-lists">
+                <div className="verification-items verified">
                   <i className="fas fa-check-circle"></i>
                   <span>Phone Verified</span>
-                  <i className="fas fa-check verification-check"></i>
+                  <i className="fas fa-check verification-checks"></i>
                 </div>
-                <div className="verification-item verified">
+                <div className="verification-items verified">
                   <i className="fas fa-check-circle"></i>
                   <span>GST Verified</span>
-                  <i className="fas fa-check verification-check"></i>
+                  <i className="fas fa-check verification-checks"></i>
                 </div>
-                <div className="verification-item premium">
+                <div className="verification-items premium">
                   <i className="fas fa-star"></i>
                   <span>Premium Seller</span>
-                  <button className="upgrade-badge">Upgrade</button>
+                  <button className="upgrade-badges">Upgrade</button>
                 </div>
               </div>
             </div>
 
             {/* Tips for Success */}
-            <div className="tips-card">
-              <h3 className="card-title">Tips for Success</h3>
-              <div className="tips-list">
-                <div className="tip-item">
-                  <div className="tip-icon">
+            <div className="tips-cards">
+              <h3 className="card-titles">Tips for Success</h3>
+              <div className="tips-lists">
+                <div className="tip-items">
+                  <div className="tip-icons">
                     <i className="fas fa-lightbulb"></i>
                   </div>
-                  <div className="tip-content">
-                    <h4 className="tip-title">Optimize Product Videos</h4>
-                    <p className="tip-text">Use clean background & good lighting for better visibility.</p>
+                  <div className="tip-contents">
+                    <h4 className="tip-titles">Optimize Product Videos</h4>
+                    <p className="tip-texts">Use clean background & good lighting for better visibility.</p>
                   </div>
                 </div>
-                <div className="tip-item">
-                  <div className="tip-icon">
+                <div className="tip-items">
+                  <div className="tip-icons">
                     <i className="fas fa-chart-line"></i>
                   </div>
-                  <div className="tip-content">
-                    <h4 className="tip-title">Boost your Listings</h4>
-                    <p className="tip-text">Feature your products, get 3x more views than regular listings.</p>
+                  <div className="tip-contents">
+                    <h4 className="tip-titles">Boost your Listings</h4>
+                    <p className="tip-texts">Feature your products, get 3x more views than regular listings.</p>
                   </div>
                 </div>
               </div>
