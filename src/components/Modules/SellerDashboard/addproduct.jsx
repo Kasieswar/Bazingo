@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Navbar from './navbar';
-import './dashboard.css';
 import './addproduct.css';
 
 function AddProduct() {
@@ -14,8 +13,6 @@ function AddProduct() {
     visibility: 'live'
   });
 
-  const [videoFile, setVideoFile] = useState(null);
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -24,13 +21,9 @@ function AddProduct() {
     }));
   };
 
-  const handleFileUpload = (e) => {
-    const file = e.target.files[0];
-    setVideoFile(file);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Handle form submission
     console.log('Form submitted:', formData);
   };
 
@@ -40,40 +33,43 @@ function AddProduct() {
       
       <div className="dashboard-content">
         <div className="content-wrapper">
-          {/* Left Main Content */}
+          {/* Main Content */}
           <div className="main-content">
             {/* Page Header */}
-            <div className="add-product-header">
+            <div className="page-header">
+              
               <h1 className="page-title">Add New Product</h1>
-              <p className="page-subtitle">Fill in your product using Video or just Content to attract more buyer!</p>
+              <p className="page-subtitle">List a new product using video or reel content to attract more buyers.</p>
             </div>
 
-            {/* Product Form Card */}
-            <div className="product-form-card">
-              <form onSubmit={handleSubmit} className="product-form">
+            {/* Add Product Form */}
+            <div className="add-product-form-container">
+              <form onSubmit={handleSubmit} className="add-product-form">
+                {/* Product Name and Price Row */}
                 <div className="form-row">
                   <div className="form-group">
-                    <label htmlFor="productName">
+                    <label className="form-label">
                       Product Name <span className="required">*</span>
                     </label>
                     <input
                       type="text"
-                      id="productName"
                       name="productName"
+                      className="form-input"
                       placeholder="Enter product or service name"
                       value={formData.productName}
                       onChange={handleInputChange}
                       required
                     />
                   </div>
+                  
                   <div className="form-group">
-                    <label htmlFor="price">
-                      Price ($ per unit / service) <span className="required">*</span>
+                    <label className="form-label">
+                      Price (₹ per unit / service) <span className="required">*</span>
                     </label>
                     <input
-                      type="text"
-                      id="price"
+                      type="number"
                       name="price"
+                      className="form-input"
                       placeholder="0.00"
                       value={formData.price}
                       onChange={handleInputChange}
@@ -82,70 +78,64 @@ function AddProduct() {
                   </div>
                 </div>
 
+                {/* Product Description */}
                 <div className="form-group">
-                  <label htmlFor="description">
+                  <label className="form-label">
                     Product Description <span className="required">*</span>
                   </label>
                   <textarea
-                    id="description"
                     name="description"
+                    className="form-textarea"
                     placeholder="Describe your product in detail..."
-                    rows="5"
                     value={formData.description}
                     onChange={handleInputChange}
+                    rows={4}
                     required
                   ></textarea>
                 </div>
 
-                <div className="form-group upload-section">
-                  <label>
+                {/* Upload Video Section */}
+                <div className="form-group">
+                  <label className="form-label">
                     Upload Product Reel or Video <span className="required">*</span>
                   </label>
-                  <div className="upload-area">
-                    <div className="upload-content">
-                      <i className="fas fa-video upload-icon"></i>
-                      <p className="upload-text">Upload Video File</p>
-                      <p className="upload-subtext">Drag and drop your videos here, or click to browse</p>
-                      <p className="upload-formats">Supports: MP4, MOV (Max 100MB)</p>
-                      <input
-                        type="file"
-                        accept="video/*"
-                        onChange={handleFileUpload}
-                        className="file-input"
-                        id="videoUpload"
-                      />
-                      <button type="button" className="choose-file-btn" onClick={() => document.getElementById('videoUpload').click()}>
-                        Choose File
-                      </button>
+                  <div className="video-upload-area">
+                    <div className="video-upload-icon">
+                      <i className="fas fa-video"></i>
                     </div>
+                    <h4 className="upload-title">Upload Video File</h4>
+                    <p className="upload-subtitle">Drag and drop your videos here, or click to browse</p>
+                    <p className="upload-format">Supports: MP4, MOV (Max 100mb)</p>
+                    <button type="button" className="choose-file-btn">Choose File</button>
                   </div>
                 </div>
 
+                {/* Category and Subcategory Row */}
                 <div className="form-row">
                   <div className="form-group">
-                    <label htmlFor="category">
+                    <label className="form-label">
                       Category <span className="required">*</span>
                     </label>
                     <select
-                      id="category"
                       name="category"
+                      className="form-select"
                       value={formData.category}
                       onChange={handleInputChange}
                       required
                     >
                       <option value="">Select Category</option>
                       <option value="electronics">Electronics</option>
-                      <option value="clothing">Clothing</option>
+                      <option value="fashion">Fashion</option>
                       <option value="home">Home & Garden</option>
                       <option value="sports">Sports</option>
-                      <option value="books">Books</option>
                     </select>
                   </div>
+                  
                   <div className="form-group">
-                    <label htmlFor="subcategory">Subcategory</label>
+                    <label className="form-label">Subcategory</label>
                     <select
-                      id="subcategory"
                       name="subcategory"
+                      className="form-select"
                       value={formData.subcategory}
                       onChange={handleInputChange}
                     >
@@ -157,20 +147,22 @@ function AddProduct() {
                   </div>
                 </div>
 
+                {/* Add Tags */}
                 <div className="form-group">
-                  <label htmlFor="tags">Add Tags / Keywords</label>
+                  <label className="form-label">Add Tags / Keywords</label>
                   <input
                     type="text"
-                    id="tags"
                     name="tags"
-                    placeholder="Add tag press enter to add tags"
+                    className="form-input"
+                    placeholder="Add tags, uses to add tags"
                     value={formData.tags}
                     onChange={handleInputChange}
                   />
                 </div>
 
+                {/* Visibility Options */}
                 <div className="form-group">
-                  <label>Visibility Options</label>
+                  <label className="form-label">Visibility Options</label>
                   <div className="radio-group">
                     <label className="radio-option">
                       <input
@@ -195,92 +187,94 @@ function AddProduct() {
                   </div>
                 </div>
 
+                {/* Form Actions */}
                 <div className="form-actions">
-                  <button type="submit" className="save-product-btn">Save Product</button>
-                  <button type="button" className="cancel-product-btn">Cancel</button>
+                  <button type="submit" className="save-product-btn">
+                    Save Product
+                  </button>
+                  <button type="button" className="cancel-btn">
+                    Cancel
+                  </button>
                 </div>
               </form>
             </div>
           </div>
 
           {/* Right Sidebar */}
-          <div className="right-sidebar">
-            {/* Video Guidelines Card */}
+          <div className="right-sidebarss">
+            {/* Video Guidelines */}
             <div className="guideline-card">
               <div className="guideline-header">
-                <i className="fas fa-play-circle"></i>
-                <span>Video Guidelines</span>
+                <i className="fas fa-play-circle guideline-icon"></i>
+                <h3 className="card-titles">Video Guidelines</h3>
               </div>
-              <div className="guideline-content">
+              <div className="guideline-list">
                 <div className="guideline-item">
-                  <i className="fas fa-check-circle"></i>
-                  <span>Maximum file size 100MB</span>
+                  <i className="fas fa-check guideline-check"></i>
+                  <span>Maximum file size: 100MB</span>
                 </div>
                 <div className="guideline-item">
-                  <i className="fas fa-check-circle"></i>
+                  <i className="fas fa-check guideline-check"></i>
                   <span>Supported formats: MP4, MOV</span>
                 </div>
                 <div className="guideline-item">
-                  <i className="fas fa-check-circle"></i>
-                  <span>Recommended resolution: 1080p</span>
+                  <i className="fas fa-check guideline-check"></i>
+                  <span>Recommended duration: 15-60 seconds</span>
                 </div>
                 <div className="guideline-item">
-                  <i className="fas fa-check-circle"></i>
-                  <span>Keep videos under 60 seconds</span>
+                  <i className="fas fa-check guideline-check"></i>
+                  <span>Resolution: 720p or higher</span>
                 </div>
               </div>
             </div>
 
-            {/* Important Note Card */}
+            {/* Important Note */}
             <div className="note-card">
               <div className="note-header">
-                <i className="fas fa-exclamation-triangle"></i>
-                <span>Important Note</span>
+                <i className="fas fa-exclamation-triangle note-icon"></i>
+                <h3 className="card-titles">Important Note</h3>
               </div>
-              <div className="note-content">
-                <p>This platform does not allow photo uploads. Only Product Reel/Video files are supported for showcasing products.</p>
-              </div>
+              <p className="note-text">
+                This platform does not allow photo uploads. Only Product Videos/Reels are supported for showcasing products.
+              </p>
             </div>
 
-            {/* Tips Card */}
-            <div className="tips-card-product">
-              <div className="tips-header-product">
-                <i className="fas fa-lightbulb"></i>
-                <span>Tips for Product Videos</span>
+            {/* Tips for Product Videos */}
+            <div className="tips-card">
+              <div className="tips-header">
+                <i className="fas fa-lightbulb tips-icon"></i>
+                <h3 className="card-titles">Tips for Product Videos</h3>
               </div>
-              <div className="tips-content-product">
-                <div className="tip-item-product">
-                  <i className="fas fa-check"></i>
-                  <span>Use clean lighting and backgrounds</span>
+              <div className="tips-list">
+                <div className="tip-item">
+                  <i className="fas fa-check tip-check"></i>
+                  <span>Use clean lighting and backgrounds.</span>
                 </div>
-                <div className="tip-item-product">
-                  <i className="fas fa-check"></i>
+                <div className="tip-item">
+                  <i className="fas fa-check tip-check"></i>
                   <span>Show key features clearly</span>
                 </div>
-                <div className="tip-item-product">
-                  <i className="fas fa-check"></i>
+                <div className="tip-item">
+                  <i className="fas fa-check tip-check"></i>
                   <span>Keep it under 60 seconds for better engagement</span>
                 </div>
               </div>
             </div>
 
-            {/* Need Help Card */}
+            {/* Need Help */}
             <div className="help-card">
-              <div className="help-header">
-                <i className="fas fa-question-circle"></i>
-                <span>Need Help?</span>
-              </div>
-              <div className="help-content">
-                <div className="help-item">
-                  <i className="fas fa-video"></i>
+              <h3 className="card-titles">Need Help?</h3>
+              <div className="help-options">
+                <div className="help-option">
+                  <i className="fas fa-video help-icon"></i>
                   <span>Video Creation Tips</span>
                 </div>
-                <div className="help-item">
-                  <i className="fas fa-question"></i>
+                <div className="help-option">
+                  <i className="fas fa-question-circle help-icon"></i>
                   <span>FAQ</span>
                 </div>
-                <div className="help-item">
-                  <i className="fas fa-headset"></i>
+                <div className="help-option">
+                  <i className="fas fa-headset help-icon"></i>
                   <span>Contact Support</span>
                 </div>
               </div>
