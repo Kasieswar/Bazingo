@@ -4,9 +4,9 @@ function communitysection() {
   return (
     <div>
       <section className="community-container">
-      <div className="main-content">
+      <div className="main">
         {/* Left Side - Discussion Categories + Latest Posts */}
-        <div className="left-section">
+        <div className="left-side">
           {/* Discussion Categories */}
           <div className="discussion-categories">
             <h2>Discussion Categories</h2>
@@ -96,7 +96,7 @@ function communitysection() {
         </div>
 
         {/* Right Side Panel */}
-        <div className="right-sidebar">
+        <div className="right-sides">
           {/* Create New Post */}
           <div className="new-post-box">
             <p>Have something to share?</p>

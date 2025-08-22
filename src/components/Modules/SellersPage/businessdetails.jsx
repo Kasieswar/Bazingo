@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import Header from '../header'
 import Kinky from '../../images/Kinky.png'
+import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 
 function BusinessDetails() {
+  const navigate = useNavigate(); // Initialize navigate function
+  
   const [formData, setFormData] = useState({
     fullName: '',
     businessName: '',
@@ -42,6 +45,18 @@ function BusinessDetails() {
     console.log('Form submitted:', formData);
   };
 
+  const handleContinue = () => {
+    // Validate required fields before navigation
+    const requiredFields = ['fullName', 'businessName', 'pincode', 'city', 'state', 'email'];
+    const isFormValid = requiredFields.every(field => formData[field].trim() !== '');
+    
+    if (isFormValid) {
+      navigate('/productdetails'); // Use navigate function
+    } else {
+      alert('Please fill in all required fields');
+    }
+  };
+
   const steps = [
     { number: 1, title: 'Create account', completed: true },
     { number: 2, title: 'Business Details', completed: false, current: true },
@@ -58,17 +73,16 @@ function BusinessDetails() {
           <div className="form-section">
             {/* Progress Steps */}
             <div className="progress-steps">
-  {steps.map((step, index) => (
-    <div key={step.number} className="step-item">
-      <div className={`step-circle ${step.completed ? 'completed' : ''} ${step.current ? 'current' : ''}`}>
-        {step.completed ? <i className="fas fa-check"></i> : step.number}
-      </div>
-      <span className="step-title">{step.title}</span>
-      {index < steps.length - 1 && <div className="step-line"></div>}
-    </div>
-  ))}
-</div>
-
+              {steps.map((step, index) => (
+                <div key={step.number} className="step-item">
+                  <div className={`step-circle ${step.completed ? 'completed' : ''} ${step.current ? 'current' : ''}`}>
+                    {step.completed ? <i className="fas fa-check"></i> : step.number}
+                  </div>
+                  <span className="step-title">{step.title}</span>
+                  {index < steps.length - 1 && <div className="step-line"></div>}
+                </div>
+              ))}
+            </div>
 
             {/* Form */}
             <div className="business-form">
@@ -182,6 +196,16 @@ function BusinessDetails() {
                   </div>
                 </div>
               </form>
+              {/* Continue Button */}
+              <div className="continue-section">
+                <button 
+                  className="continue-btn"
+                  onClick={handleContinue}
+                >
+                  Continue to Next Step
+                  <i className="fas fa-arrow-right"></i>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -212,7 +236,7 @@ function BusinessDetails() {
             </div>
 
             {/* Testimonial Card */}
-            <div className="info-card testimonial">
+            <div className="info-card testimonils">
               <div className="testimonial-header">
                 <div className="profile-section">
                   <div className="profile-pic">

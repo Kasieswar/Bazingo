@@ -635,18 +635,18 @@
 }
 
 /* Left Side - Testimonials */
-.testimonial {
+.testimonialsss {
   flex: 1;
   min-width: 300px;
 }
 
-.testimonial h2 {
+.testimonialsss h2 {
   color: #0097a7;
   font-size: 30px;
   margin-bottom: 10px;
 }
 
-.testimonial .subtitle {
+.testimonialsss .subtitle {
   color: #003d40;
   font-size: 20px;
   margin-bottom: 20px;
@@ -754,12 +754,12 @@
     padding: 30px 20px;
   }
 
-  .testimonial h2,
+  .testimonialsss h2,
   .faqs h2 {
     font-size: 26px;
   }
 
-  .testimonial .subtitle {
+  .testimonialsss .subtitle {
     font-size: 18px;
   }
 
@@ -797,16 +797,16 @@
 
   }
 
-  .testimonial {
+  .testimonialsss {
     max-width: 100%;
   }
 
-  .testimonial h2,
+  .testimonialsss h2,
   .faqs h2 {
     font-size: 22px;
   }
 
-  .testimonial .subtitle {
+  .testimonialsss .subtitle {
     font-size: 16px;
     margin-bottom: 15px;
   }
@@ -832,12 +832,12 @@
     gap: 20px;
   }
 
-  .testimonial h2,
+  .testimonialsss h2,
   .faqs h2 {
     font-size: 18px;
   }
 
-  .testimonial .subtitle {
+  .testimonialsss .subtitle {
     font-size: 14px;
   }
 
@@ -1611,7 +1611,7 @@
 }
 
 /* Testimonial Card */
-.testimonial {
+.testimonils {
   background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
 }
 
@@ -2558,7 +2558,7 @@
 
 .magical-steps {
   text-align: left;
-  space: 12px;
+  scale: 12px;
 }
 
 .magical-step {

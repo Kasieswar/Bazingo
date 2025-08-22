@@ -29,7 +29,7 @@ function Testimonialfaq() {
     <div>
       <section className="testimonials-faqs-section">
       {/* Left: Testimonials */}
-      <div className="testimonial">
+      <div className="testimonialsss">
         <h2>What Sellers Are Saying</h2>
         <p className="subtitle">
           Hear how real sellers transformed their businesses with BuyLive.
