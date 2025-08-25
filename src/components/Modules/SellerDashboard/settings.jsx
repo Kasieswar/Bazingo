@@ -51,7 +51,7 @@ function Settings() {
     const confirmLogout = window.confirm('Are you sure you want to logout?');
     
     if (confirmLogout) {
-      navigate('/sellerspage');
+      navigate('/sellerpage');
     }
   };
 
