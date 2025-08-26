@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './navbar';
 import './messages.css';
 
@@ -7,6 +7,23 @@ function Messages() {
   const [searchTerm, setSearchTerm] = useState('');
   const [messageText, setMessageText] = useState('');
   const [activeFilter, setActiveFilter] = useState('All');
+  const [isMobile, setIsMobile] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(true);
+
+  // Check if device is mobile/tablet
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+      // Reset navigation state when switching between desktop and mobile
+      if (window.innerWidth > 768) {
+        setShowSidebar(true);
+      }
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const conversations = [
     {
@@ -121,6 +138,16 @@ function Messages() {
 
   const handleChatSelect = (chatId) => {
     setActiveChat(chatId);
+    // On mobile, hide sidebar when chat is selected
+    if (isMobile) {
+      setShowSidebar(false);
+    }
+  };
+
+  const handleBackToConversations = () => {
+    if (isMobile) {
+      setShowSidebar(true);
+    }
   };
 
   return (
@@ -131,7 +158,7 @@ function Messages() {
         <div className="messages-container">
           <div className="messages-layout">
             {/* Left Sidebar - Conversations */}
-            <div className="conversations-sidebar">
+            <div className={`conversations-sidebar ${!showSidebar && isMobile ? 'hidden' : ''}`}>
               <div className="conversations-header">
                 <div className="conversations-title-section">
                   <h2 className="conversations-title">Conversations</h2>
@@ -224,12 +251,34 @@ function Messages() {
             </div>
 
             {/* Right Side - Chat Area */}
-            <div className="chat-area">
+            <div className={`chat-area ${activeChat && isMobile ? 'active' : ''}`}>
               {activeChat ? (
                 <>
                   {/* Chat Header */}
                   <div className="chat-header">
-                    <div className="chat-user-info">
+                    {/* Mobile Header with Back Button */}
+                    <div className="chat-header-left show-on-mobile">
+                      <button className="back-btn" onClick={handleBackToConversations}>
+                        <i className="fas fa-arrow-left"></i>
+                      </button>
+                      <div className="chat-user-info">
+                        <div className="chat-avatar">
+                          <div className="avatar-circles">
+                            {conversations.find(c => c.id === activeChat)?.avatar}
+                          </div>
+                          <div className="online-indicator"></div>
+                        </div>
+                        <div className="chat-user-details">
+                          <h3 className="chat-user-name">
+                            {conversations.find(c => c.id === activeChat)?.name}
+                          </h3>
+                          <span className="chat-user-status">Online 2 minutes ago</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Desktop Header */}
+                    <div className="chat-user-info hide-on-mobile">
                       <div className="chat-avatar">
                         <div className="avatar-circles">
                           {conversations.find(c => c.id === activeChat)?.avatar}
@@ -243,6 +292,7 @@ function Messages() {
                         <span className="chat-user-status">Online 2 minutes ago</span>
                       </div>
                     </div>
+
                     <div className="chat-actions">
                       <button className="chat-action-btn">
                         <i className="fas fa-phone"></i>

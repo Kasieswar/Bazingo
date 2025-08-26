@@ -153,7 +153,7 @@ function Products() {
               {products.map((product) => (
                 <div key={product.id} className="product-card">
                   <div className="product-image-container">
-                    <img src={product.image} alt={product.name} className="product-image" />
+                    <img src={product.image} alt={product.name} className="product-images" />
                     <div className="live-badge">
                       <i className="fas fa-circle"></i>
                       LIVE
