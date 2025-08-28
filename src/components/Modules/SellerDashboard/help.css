@@ -1,5 +1,4 @@
 /* Help & Support Center Styles */
-
 .help-support-content {
   margin-left: 250px;
   margin-top: 64px;
@@ -143,8 +142,6 @@
   transition: all 0.3s ease;
   border: 1px solid #f0f0f0;
 }
-
-
 
 .help-card:hover {
   transform: translateY(-4px);

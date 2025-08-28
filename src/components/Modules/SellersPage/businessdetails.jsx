@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Header from '../header'
 import Kinky from '../../images/Kinky.png'
-import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
+import { useNavigate } from 'react-router-dom';
 
 function BusinessDetails() {
-  const navigate = useNavigate(); // Initialize navigate function
+  const navigate = useNavigate();
   
   const [formData, setFormData] = useState({
     fullName: '',
@@ -15,7 +15,7 @@ function BusinessDetails() {
     email: ''
   });
 
-  const [currentStep, setCurrentStep] = useState(2); // Since we're on step 2
+  const [currentStep, setCurrentStep] = useState(2);
   const [isEmailVerified, setIsEmailVerified] = useState(false);
 
   const handleInputChange = (e) => {
@@ -29,29 +29,25 @@ function BusinessDetails() {
   const handleVerifyEmail = () => {
     if (formData.email) {
       setIsEmailVerified(true);
-      // Add email verification logic here
       console.log('Verifying email:', formData.email);
     }
   };
 
   const handleLater = () => {
-    // Handle later action
     console.log('Clicked Later');
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
     console.log('Form submitted:', formData);
   };
 
   const handleContinue = () => {
-    // Validate required fields before navigation
     const requiredFields = ['fullName', 'businessName', 'pincode', 'city', 'state', 'email'];
     const isFormValid = requiredFields.every(field => formData[field].trim() !== '');
     
     if (isFormValid) {
-      navigate('/productdetails'); // Use navigate function
+      navigate('/productdetails');
     } else {
       alert('Please fill in all required fields');
     }

@@ -7,7 +7,7 @@ function ProductDetails() {
   const navigate = useNavigate();
   const [productNames, setProductNames] = useState(['', '', '']);
   const [videos, setVideos] = useState([null, null, null]);
-  const [currentStep, setCurrentStep] = useState(3); // Since we're on step 3
+  const [currentStep, setCurrentStep] = useState(3);
 
   const handleProductNameChange = (index, value) => {
     const newProductNames = [...productNames];

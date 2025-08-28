@@ -91,8 +91,6 @@
     height: 450px;
 }
 
-
-
 @media (max-width: 1024px) {
   .community-hero {
     padding: 120px 30px;
@@ -132,7 +130,6 @@
   }
 }
 
-/* Tablet - 768px */
 @media (max-width: 768px) {
   .community-hero {
     padding: 120px 20px;
@@ -176,7 +173,6 @@
 
 }
 
-/* Mobile - 426px */
 @media (max-width: 426px) {
   .community-hero {
     padding: 120px 20px;
@@ -230,8 +226,6 @@
 
 
 /* Mentor Section */
-
-/* Scroll Buttons */
 .scroll-button {
   position: absolute;
   top: 55%;
@@ -416,7 +410,6 @@
   }
 }
 
-/* Tablet Portrait - 768px */
 @media (max-width: 768px) {
   .mentors-section {
     padding: 35px 30px;
@@ -483,7 +476,6 @@
   }
 }
 
-/* Mobile - 426px */
 @media (max-width: 426px) {
   .mentors-section {
     padding: 25px 20px;
@@ -560,10 +552,7 @@
   }
 }
 
-
-
 /* Community Section */
-
 
 .community-container {
   background: #d4f1f4;
@@ -588,7 +577,6 @@
   gap: 20px;
 }
 
-/* Discussion Categories */
 .discussion-categories h2 {
   font-size: 30px;
   margin-bottom: 20px;
@@ -601,7 +589,6 @@
   gap: 30px;
 }
 
-/* Card */
 .category-cardss {
   background: #fff;
   border-radius: 12px;
@@ -672,8 +659,6 @@
   color: #0097A7;
   font-size: 14px;
 }
-
-
 
 /* Latest Posts */
 .latest-posts {
@@ -988,7 +973,6 @@
   }
 }
 
-/* Tablet Portrait - 768px */
 @media (max-width: 768px) {
   .community-container {
     padding: 15px 20px;
@@ -1094,7 +1078,6 @@
   }
 }
 
-/* Mobile - 426px */
 @media (max-width: 426px) {
   .community-container {
     padding: 10px;

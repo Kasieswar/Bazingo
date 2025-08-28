@@ -22,7 +22,7 @@ function SuggestedMatches() {
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
-    setCurrentPage(1); // reset to first page when category changes
+    setCurrentPage(1); 
   };
 
 

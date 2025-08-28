@@ -13,7 +13,7 @@ function AddProduct() {
     visibility: 'live'
   });
 
-  const [uploadMethod, setUploadMethod] = useState('file'); // 'file' or 'link'
+  const [uploadMethod, setUploadMethod] = useState('file');
   const [videoLink, setVideoLink] = useState('');
 
   const handleInputChange = (e) => {
@@ -26,7 +26,7 @@ function AddProduct() {
 
   const handleUploadMethodChange = (method) => {
     setUploadMethod(method);
-    setVideoLink(''); // Clear link when switching methods
+    setVideoLink('');
   };
 
   const handleVideoLinkChange = (e) => {
@@ -35,7 +35,7 @@ function AddProduct() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
+    
     const submissionData = {
       ...formData,
       uploadMethod,

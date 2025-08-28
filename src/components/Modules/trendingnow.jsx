@@ -10,10 +10,6 @@ import Blender from '../images/Blender.png'
 import Desk from '../images/Desk.png'
 
 
-
-
-
-
 const categories = ['All', 'Kitchen', 'Furniture', 'Electronics', 'Kids & Toys', 'Fashion', 'Beauty'];
 
 const productVideos = [

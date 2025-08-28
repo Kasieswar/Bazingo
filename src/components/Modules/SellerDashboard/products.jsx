@@ -38,7 +38,7 @@ function Products() {
     }
   ];
 
-  return (
+  return (  
     <div className="dashboard-layout">
       <Navbar />
       

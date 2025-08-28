@@ -34,16 +34,12 @@ function AddGST() {
       'Setting up your dashboard...'
     ];
     
-    // Initial gear spin for 1 second
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // Trigger sparkle burst
+
     setShowSparkles(true);
     
-    // Wait for sparkle animation
     await new Promise(resolve => setTimeout(resolve, 800));
     
-    // Add each step with shimmer effect
     for (let i = 0; i < steps.length; i++) {
       await new Promise(resolve => setTimeout(resolve, 600));
       setCompletedSteps(prev => [...prev, steps[i]]);

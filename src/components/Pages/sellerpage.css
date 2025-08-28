@@ -178,7 +178,6 @@
   
 }
 
-/* ===== 768px breakpoint (Tablets) ===== */
 @media (max-width: 768px) {
   .hero-container-seller {
     flex-direction: column;
@@ -212,7 +211,6 @@
   }
 }
 
-/* ===== 426px breakpoint (Mobile) ===== */
 @media (max-width: 426px) {
   .seller-hero {
     padding: 120px 0 20px;
@@ -350,7 +348,6 @@
   }
 }
 
-/* ===== 768px breakpoint (Tablets) ===== */
 @media (max-width: 768px) {
   .why-sell-section {
     padding: 20px;
@@ -382,7 +379,6 @@
   }
 }
 
-/* ===== 426px breakpoint (Mobile) ===== */
 @media (max-width: 426px) {
 
   .why-sell-section h2 {
@@ -543,7 +539,6 @@
   }
 }
 
-/* For tablets & large phones (portrait) */
 @media (max-width: 768px) {
   .how-it-workss {
     padding: 35px 20px;
@@ -582,7 +577,6 @@
   }
 }
 
-/* For mobile screens */
 @media (max-width: 426px) {
   .how-it-workss {
     padding: 25px 15px;
@@ -623,9 +617,7 @@
   }
 }
 
-
 /* Testiomial - Faq */
-
 .testimonials-faqs-section {
   background-color: #d4f1f4;
   display: flex;
@@ -789,12 +781,10 @@
   }
 }
 
-/* ===== 768px breakpoint (Tablets) ===== */
 @media (max-width: 768px) {
   .testimonials-faqs-section {
     flex-direction: column;
     align-items: center;
-
   }
 
   .testimonialsss {
@@ -825,7 +815,6 @@
   }
 }
 
-/* ===== 426px breakpoint (Mobile) ===== */
 @media (max-width: 426px) {
   .testimonials-faqs-section {
     padding: 20px;
@@ -999,7 +988,6 @@
   }
 }
 
-/* ===== 768px breakpoint (Tablets) ===== */
 @media (max-width: 768px) {
   .features-container {
     align-items: center;
@@ -1024,7 +1012,6 @@
   }
 }
 
-/* ===== 426px breakpoint (Mobile) ===== */
 @media (max-width: 426px) {
   .feature-cta-section {
     padding: 30px 15px;
@@ -1417,8 +1404,6 @@
   background: #00bcd4;
 }
 
-
-
 /* Form */
 .business-form {
   max-width: 100%;
@@ -1712,7 +1697,6 @@
   }
 }
 
-/* 768px - Tablet Portrait */
 @media (max-width: 768px) {
   .business-details-container {
     padding: 130px 15px 20px;
@@ -1795,7 +1779,6 @@
   }
 }
 
-/* 426px - Mobile */
 @media (max-width: 426px) {
   
   .business-details-wrapper {
@@ -1849,7 +1832,6 @@
     display: none;
   }
   
-  /* Form adjustments */
   .form-header h2 {
     font-size: 22px;
   }
@@ -1883,7 +1865,6 @@
     font-size: 11px;
   }
   
-  /* Card adjustments */
   .card-header {
     margin-bottom: 15px;
   }
@@ -2150,7 +2131,6 @@
   }
 }
 
-/* Tablet - 768px and down */
 @media (max-width: 768px) {
   .section-title {
     font-size: 15px;
@@ -2227,7 +2207,6 @@
   }
 }
 
-/* Mobile - 426px and down */
 @media (max-width: 426px) {
   .section-title {
     font-size: 14px;
@@ -2317,7 +2296,6 @@
     justify-content: center;
   }
 }
-
 
 /* GST Section */
 .gst-section {
@@ -2657,7 +2635,6 @@
   100% { left: 100%; }
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .magical-content {
     padding: 40px 30px;

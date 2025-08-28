@@ -3,7 +3,7 @@ import Navbar from './navbar';
 import './help.css';
 
 function Help() {
-  const [activeTab, setActiveTab] = useState('buyers'); // 'buyers' or 'sellers'
+  const [activeTab, setActiveTab] = useState('buyers');
   const [searchTerm, setSearchTerm] = useState('');
   const [expandedFaq, setExpandedFaq] = useState(null);
 

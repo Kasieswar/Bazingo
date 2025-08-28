@@ -37,26 +37,20 @@ function Sellerhero() {
   const handleFormSubmit = (e) => {
     e.preventDefault(); 
     
-    // Get the phone number value
     const phoneValue = phoneInputRef.current.value.trim();
     
-    // Basic validation - check if phone number is entered
     if (!phoneValue) {
       alert('Please enter your mobile number');
       return;
     }
 
-    // Clean the phone number (remove all non-digits)
     const cleanPhoneNumber = phoneValue.replace(/\D/g, '');
     
-    // Basic validation for Indian phone numbers (10 digits) or international (7-15 digits)
     if (cleanPhoneNumber.length >= 7 && cleanPhoneNumber.length <= 15) {
-      // Store both clean and original phone number
       setPhoneNumber(cleanPhoneNumber);
-      setEditPhoneNumber(phoneValue); // Store original format for editing
+      setEditPhoneNumber(phoneValue);
       setShowOtpPopup(true);
       
-      // Get full international number if intl-tel-input is available
       let fullNumber = phoneValue;
       if (itiInstanceRef.current) {
         try {
@@ -66,7 +60,6 @@ function Sellerhero() {
         }
       }
       
-      // Here you would typically send the OTP to the phone number
       console.log('Sending OTP to:', fullNumber);
     } else {
       alert('Please enter a valid phone number (7-15 digits)');
@@ -78,10 +71,8 @@ function Sellerhero() {
   };
 
   const handleEditPhone = () => {
-    // When edit is clicked, populate the input with the stored phone number
     if (phoneInputRef.current && editPhoneNumber) {
       phoneInputRef.current.value = editPhoneNumber;
-      // Focus the input field
       setTimeout(() => {
         phoneInputRef.current.focus();
       }, 100);

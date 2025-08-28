@@ -10,11 +10,9 @@ function Messages() {
   const [isMobile, setIsMobile] = useState(false);
   const [showSidebar, setShowSidebar] = useState(true);
 
-  // Check if device is mobile/tablet
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
-      // Reset navigation state when switching between desktop and mobile
       if (window.innerWidth > 768) {
         setShowSidebar(true);
       }
@@ -131,14 +129,13 @@ function Messages() {
 
   const handleSendMessage = () => {
     if (messageText.trim() && activeChat) {
-      // Logic to send message would go here
+      
       setMessageText('');
     }
   };
 
   const handleChatSelect = (chatId) => {
     setActiveChat(chatId);
-    // On mobile, hide sidebar when chat is selected
     if (isMobile) {
       setShowSidebar(false);
     }

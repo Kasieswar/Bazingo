@@ -3,19 +3,6 @@
   margin-bottom: 20px;
 }
 
-.breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  color: #64748b;
-  margin-bottom: 8px;
-}
-
-.breadcrumb i {
-  font-size: 12px;
-}
-
 .page-title {
   font-size: 24px;
   font-weight: 600;

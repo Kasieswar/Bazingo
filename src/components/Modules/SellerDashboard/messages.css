@@ -789,8 +789,6 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-
-
 .send-btn:active {
   transform: scale(0.95);
 }
@@ -810,9 +808,6 @@
   font-size: 0.8125rem;
   font-weight: 500;
 }
-
-
-/* Responsive Styles for Messages Component */
 
 /* Tablet Large (1024px) */
 @media (max-width: 1024px) {
@@ -946,7 +941,6 @@
     overflow: hidden;
   }
 
-  /* Mobile Navigation States */
   .conversations-sidebar {
     width: 100%;
     position: absolute;
@@ -1010,10 +1004,8 @@
     color: #1a1a1a;
   }
 
-  /* Desktop/Mobile visibility classes */
   .hide-on-mobile {
     display: none;
-    
   }
 
   .show-on-mobile {
@@ -1160,7 +1152,6 @@
     font-size: 0.9375rem;
   }
 
-  /* Overlay for sidebar */
   .sidebar-overlay {
     display: none;
     position: fixed;
@@ -1177,7 +1168,6 @@
   }
 }
 
-/* Mobile Large (426px) */
 @media (max-width: 426px) {
   .messages-content {
     margin-top: 60px;
@@ -1404,14 +1394,12 @@
     font-size: 0.875rem;
   }
 
-  /* System notifications adjustments */
   .conversation-item.system-notification .conversation-avatar.system {
     width: 36px;
     height: 36px;
     font-size: 0.875rem;
   }
 
-  /* Typing indicator adjustments */
   .typing-indicator {
     padding: 0.875rem 1rem;
     font-size: 0.8125rem;
@@ -1423,7 +1411,6 @@
     height: 5px;
   }
 
-  /* Unread count adjustments */
   .unread-count {
     padding: 0.0625rem 0.25rem;
     font-size: 0.6875rem;
@@ -1439,7 +1426,7 @@
   }
 }
 
-/* Utility classes for mobile functionality */
+
 .hide-on-mobile {
   display: block;
 }
@@ -1458,12 +1445,12 @@
   }
 }
 
-/* Smooth transitions for responsive changes */
+
 * {
   transition: padding 0.2s ease, margin 0.2s ease, font-size 0.2s ease;
 }
 
-/* Focus improvements for mobile */
+
 @media (max-width: 768px) {
   .conversation-item:focus,
   .filter-tab:focus,
@@ -1472,7 +1459,6 @@
     outline-offset: 2px;
   }
   
-  /* Larger touch targets */
   .conversation-item,
   .filter-tab,
   .chat-action-btn,
@@ -1482,7 +1468,6 @@
   }
 }
 
-/* Landscape phone adjustments */
 @media (max-width: 768px) and (orientation: landscape) {
   .messages-area {
     padding: 0.875rem 1rem;

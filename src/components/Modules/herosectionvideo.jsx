@@ -5,7 +5,6 @@ function herosectionvideo() {
     <div>
     <section className="hero-section">
       <div className="hero-container">
-        {/* Content positioned on the right */}
         <div className="hero-content">
           <h1 className="hero-title">
             Discover Trending Products<br />
