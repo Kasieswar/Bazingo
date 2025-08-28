@@ -13,6 +13,9 @@ function AddProduct() {
     visibility: 'live'
   });
 
+  const [uploadMethod, setUploadMethod] = useState('file'); // 'file' or 'link'
+  const [videoLink, setVideoLink] = useState('');
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -21,10 +24,24 @@ function AddProduct() {
     }));
   };
 
+  const handleUploadMethodChange = (method) => {
+    setUploadMethod(method);
+    setVideoLink(''); // Clear link when switching methods
+  };
+
+  const handleVideoLinkChange = (e) => {
+    setVideoLink(e.target.value);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission
-    console.log('Form submitted:', formData);
+    const submissionData = {
+      ...formData,
+      uploadMethod,
+      videoLink: uploadMethod === 'link' ? videoLink : null
+    };
+    console.log('Form submitted:', submissionData);
   };
 
   return (
@@ -99,15 +116,55 @@ function AddProduct() {
                   <label className="form-label">
                     Upload Product Reel or Video <span className="required">*</span>
                   </label>
-                  <div className="video-upload-area">
-                    <div className="video-upload-icon">
-                      <i className="fas fa-video"></i>
-                    </div>
-                    <h4 className="upload-title">Upload Video File</h4>
-                    <p className="upload-subtitle">Drag and drop your videos here, or click to browse</p>
-                    <p className="upload-format">Supports: MP4, MOV (Max 100mb)</p>
-                    <button type="button" className="choose-file-btn">Choose File</button>
+                  
+                  {/* Upload Method Toggle */}
+                  <div className="upload-method-toggle">
+                    <button 
+                      type="button" 
+                      className={`toggle-btn ${uploadMethod === 'file' ? 'active' : ''}`}
+                      onClick={() => handleUploadMethodChange('file')}
+                    >
+                      <i className="fas fa-upload"></i>
+                      Upload File
+                    </button>
+                    <button 
+                      type="button" 
+                      className={`toggle-btn ${uploadMethod === 'link' ? 'active' : ''}`}
+                      onClick={() => handleUploadMethodChange('link')}
+                    >
+                      <i className="fas fa-link"></i>
+                      Add Link
+                    </button>
                   </div>
+
+                  {uploadMethod === 'file' ? (
+                    <div className="video-upload-area">
+                      <div className="video-upload-icon">
+                        <i className="fas fa-video"></i>
+                      </div>
+                      <h4 className="upload-title">Upload Video File</h4>
+                      <p className="upload-subtitle">Drag and drop your videos here, or click to browse</p>
+                      <p className="upload-format">Supports: MP4, MOV (Max 100mb)</p>
+                      <button type="button" className="choose-file-btn">Choose File</button>
+                    </div>
+                  ) : (
+                    <div className="video-link-area">
+                      <div className="video-link-icon">
+                        <i className="fas fa-link"></i>
+                      </div>
+                      <h4 className="link-title">Add Instagram Reel or YouTube Shorts Link</h4>
+                      <p className="link-subtitle">Paste your Instagram Reel or YouTube Shorts URL below</p>
+                      <input
+                        type="url"
+                        className="video-link-input"
+                        placeholder="https://www.instagram.com/reel/... or https://youtube.com/shorts/..."
+                        value={videoLink}
+                        onChange={handleVideoLinkChange}
+                        required={uploadMethod === 'link'}
+                      />
+                      <p className="link-format">Supported: Instagram Reels, YouTube Shorts</p>
+                    </div>
+                  )}
                 </div>
 
                 {/* Category and Subcategory Row */}

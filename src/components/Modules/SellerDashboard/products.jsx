@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './navbar';
 import './products.css';
+import { Link } from 'react-router-dom';
 
 function Products() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -49,21 +50,22 @@ function Products() {
               <h1 className="page-title">My Products</h1>
               <p className="page-subtitle">Manage your product listings and track their performance</p>
             </div>
+            <Link to="/add-product" className='links'>
             <button className="add-product-header-btn">
               <i className="fas fa-plus"></i>
               Add New Product
-            </button>
+            </button></Link>
           </div>
 
           {/* Search and Filters */}
           <div className="filters-section">
-            <div className="search-container">
-              <div className="search-input-wrapper">
+            <div className="search-containerss">
+              <div className="search-input-wrapperss">
                 <i className="fas fa-search search-icon"></i>
                 <input 
                   type="text" 
                   placeholder="Search products..." 
-                  className="search-input"
+                  className="searches-inputs"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
@@ -193,7 +195,7 @@ function Products() {
               ))}
               
               {/* Add New Product Card */}
-              <div className="add-product-card">
+              <Link className='links' to="/add-product"> <div className="add-product-card">
                 <div className="add-product-content">
                   <div className="add-icon">
                     <i className="fas fa-plus"></i>
@@ -201,7 +203,7 @@ function Products() {
                   <h4 className="add-title">Add New Product</h4>
                   <p className="add-description">Create a new product listing to reach more customers</p>
                 </div>
-              </div>
+              </div> </Link>
             </div>
           </div>
         </div>
