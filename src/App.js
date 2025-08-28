@@ -18,6 +18,7 @@ import Messages from './components/Modules/SellerDashboard/messages'
 import BuyerLeads from './components/Modules/SellerDashboard/buyerleads'
 import Settings from './components/Modules/SellerDashboard/settings'
 import Help from './components/Modules/SellerDashboard/help'
+import BuyerPage from './components/Pages/buyerpage'
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           <Route path='/buyer-leads' element={<BuyerLeads />} />
           <Route path='/settings' element={<Settings />} />
           <Route path='/help' element={<Help />} />
+          <Route path='/buyerpage' element={<BuyerPage />} />
         </Routes>
       </BrowserRouter>
     </div>
