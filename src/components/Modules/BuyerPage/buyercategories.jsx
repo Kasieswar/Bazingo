@@ -1,6 +1,12 @@
-import React from 'react' 
+import React, { useState } from 'react';
+import '../../Pages/buyerpage.css';
 
-const categories = [
+const CategoriesSection = ({ onCategoryChange }) => {
+  const [activeCategory, setActiveCategory] = useState('all');
+
+  
+    const categories = [
+  { id: 'all', name: 'All Products', subtitle: 'Everything & More', icon: 'fas fa-shopping-bag' },
   { id: 'electronics', name: 'Technology', subtitle: 'Electronics & Gadgets', icon: 'fas fa-mobile-alt' },
   { id: 'fashion', name: 'Fashion', subtitle: 'Clothing & Accessories', icon: 'fas fa-tshirt' },
   { id: 'food', name: 'Food', subtitle: 'Gourmet & Dining', icon: 'fas fa-utensils' },
@@ -12,22 +18,25 @@ const categories = [
   { id: 'home', name: 'Home & Garden', subtitle: 'Decor & Furniture', icon: 'fas fa-home' },
   { id: 'art', name: 'Art', subtitle: 'Crafts & Supplies', icon: 'fas fa-palette' },
   { id: 'baby', name: 'Baby & Kids', subtitle: 'Toys & Essentials', icon: 'fas fa-baby' }
-];
+  ];
 
+  const handleCategoryClick = (categoryId) => {
+    setActiveCategory(categoryId);
+    if (onCategoryChange) {
+      onCategoryChange(categoryId);
+    }
+  };
 
-function Categories() {
-    return (
-        <div>
-            <section className="category-section">
-            <h2 className="category-title">Explore by Category</h2>
-            <p className="category-subtitle">Find what you need, faster. Browse products by popular categories</p>
-
-            <div className="category-grids">
+  return (
+    <section className="category-sections">
+      <div className="category-containers">
+        <h3 className="category-titless">Shop by Categories</h3>
+        <div className="category-grids">
           {categories.map(category => (
             <button
               key={category.id}
-              className={`category-cardsss`}
-              
+              className={`category-cardsss ${activeCategory === category.id ? 'active' : ''}`}
+              onClick={() => handleCategoryClick(category.id)}
             >
               <i className={`categories-icon ${category.icon}`}></i>
               <div>
@@ -37,9 +46,9 @@ function Categories() {
             </button>
           ))}
         </div>
-            </section>
-        </div>
-    )
-}
+      </div>
+    </section>
+  );
+};
 
-export default Categories
+export default CategoriesSection;
