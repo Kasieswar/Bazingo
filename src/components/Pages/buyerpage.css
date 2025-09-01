@@ -434,8 +434,7 @@
 }
 
 .play-icon {
-  width: 28px;
-  height: 28px;
+  font-size: 28px;
   color: #0097A7;
   margin-left: 4px;
 }
@@ -471,6 +470,10 @@
 .video-control-btn:hover {
   background: rgba(0, 95, 106, 0.9);
   transform: scale(1.1);
+}
+
+.video-control-btn i {
+  font-size: 16px;
 }
 
 .product-badges {
@@ -528,16 +531,14 @@
   box-shadow: 0 8px 25px rgba(0, 151, 167, 0.2);
 }
 
-.wishlist-btn svg {
-  width: 20px;
-  height: 20px;
-  color: #005F6A;
+.wishlist-btn i {
+  font-size: 20px;
+  color: #005f6a98;
   transition: all 0.3s ease;
 }
 
-.wishlist-btn.active svg {
+.wishlist-btn.active i {
   color: #DC3545;
-  fill: #DC3545;
   animation: heartBeat 0.6s ease;
 }
 
@@ -592,6 +593,10 @@
   background: #f0fffe;
 }
 
+.quick-view-btn i {
+  font-size: 16px;
+}
+
 .product-info {
   padding: 2rem;
 }
@@ -622,8 +627,7 @@
 }
 
 .supplier-icon {
-  width: 16px;
-  height: 16px;
+  font-size: 16px;
   color: #0097A7;
 }
 
@@ -636,8 +640,7 @@
 }
 
 .location-icon {
-  width: 14px;
-  height: 14px;
+  font-size: 14px;
 }
 
 .business-details {
@@ -675,14 +678,12 @@
   gap: 0.2rem;
 }
 
-.stars svg {
-  width: 16px;
-  height: 16px;
+.stars i {
+  font-size: 16px;
 }
 
 .stars .filled {
   color: #FFC107;
-  fill: #FFC107;
 }
 
 .stars .empty {
@@ -729,8 +730,9 @@
 
 .order-quantity {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  gap: 20px;
 }
 
 .moq-label {
@@ -749,6 +751,12 @@
   gap: 0.5rem;
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
+}
+
+.product-features span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .feature-tag {
@@ -771,9 +779,8 @@
   border-color: #0097A7;
 }
 
-.feature-icon {
-  width: 12px;
-  height: 12px;
+.features-icon {
+  font-size: 14px;
 }
 
 .action-buttons {
@@ -863,9 +870,8 @@
   100% { transform: scale(1); }
 }
 
-.contact-btn svg, .inquiry-btn svg {
-  width: 16px;
-  height: 16px;
+.contact-btn i, .inquiry-btn i {
+  font-size: 16px;
 }
 
 /* Focus styles for accessibility */

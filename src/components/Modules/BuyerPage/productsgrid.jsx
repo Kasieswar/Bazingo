@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { ShoppingCart, Heart, Star, Truck, Package, Eye, MapPin, Play, Pause, Users, Factory, Phone, MessageCircle } from 'lucide-react';
-import '../../Pages/buyerpage.css';
+import TshirtVideo from '../../Videos/Tshirt.mp4'
 
 const ProductsGrid = ({ 
   activeCategory = 'all', 
@@ -12,7 +11,6 @@ const ProductsGrid = ({
   const [playingVideos, setPlayingVideos] = useState(new Set());
   const [hoveredCard, setHoveredCard] = useState(null);
 
-  // Mock data for B2B bulk products
   const allProducts = [
     {
       id: 1,
@@ -22,7 +20,7 @@ const ProductsGrid = ({
       maxOrder: 10000,
       rating: 4.8,
       reviews: 243,
-      video: "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4",
+      video: "https://youtube.com/shorts/XPhJGYJXY80?si=4ABv_3OVUmCZpjjv",
       thumbnail: "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       category: "electronics",
       supplier: "ElectroTech Industries",
@@ -41,7 +39,7 @@ const ProductsGrid = ({
       maxOrder: 50000,
       rating: 4.6,
       reviews: 189,
-      video: "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4",
+      video: TshirtVideo,
       thumbnail: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=300&fit=crop",
       category: "textiles",
       supplier: "Mumbai Textile Mills",
@@ -240,29 +238,55 @@ const ProductsGrid = ({
                 onMouseLeave={() => setHoveredCard(null)}
               >
                 <div className="product-video-container">
-                  {playingVideos.has(product.id) || hoveredCard === product.id ? (
-                    <video
-                      className="product-video"
-                      src={product.video}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      poster={product.thumbnail}
-                    />
-                  ) : (
-                    <div className="product-thumbnail">
-                      <img src={product.thumbnail} alt={product.name} className="product-image" />
-                      <div className="play-overlay">
-                        <button 
-                          className="play-btn"
-                          onClick={() => toggleVideo(product.id)}
-                        >
-                          <Play className="play-icon" />
-                        </button>
-                      </div>
-                    </div>
-                  )}
+  {playingVideos.has(product.id) ? (
+    product.video.includes("youtube.com") || product.video.includes("youtu.be") ? (
+  <iframe
+    className="product-video"
+    src={
+  product.video.includes("shorts/")
+    ? `https://www.youtube.com/embed/${product.video.split("shorts/")[1].split("?")[0]}?autoplay=1&mute=1`
+    : product.video.replace("watch?v=", "embed/").split("&")[0] + "?autoplay=1&mute=1"
+}
+    title={product.name}
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  ></iframe>
+) : product.video.includes("instagram.com") ? (
+  <iframe
+    className="product-video"
+    src={product.video + "embed"}
+    title={product.name}
+    frameBorder="0"
+    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+    allowFullScreen
+  ></iframe>
+) : (
+  <video
+    className="product-video"
+    src={product.video}
+    autoPlay
+    muted
+    loop
+    playsInline
+    controls
+    poster={product.thumbnail}
+  />
+    )
+  ) : (
+    <div className="product-thumbnail">
+      <img src={product.thumbnail} alt={product.name} className="product-image" />
+      <div className="play-overlay">
+        <button 
+          className="play-btn"
+          onClick={() => toggleVideo(product.id)}
+        >
+          <i className="fas fa-play play-icon"></i>
+        </button>
+      </div>
+    </div>
+  )}  
+
                   
                   <div className="product-badges">
                     {product.badge && <span className="product-badge">{product.badge}</span>}
@@ -274,7 +298,7 @@ const ProductsGrid = ({
                     onClick={() => toggleWishlist(product.id)}
                     title="Add to Watchlist"
                   >
-                    <Heart />
+                    <i className="fas fa-heart"></i>
                   </button>
                   
                   <div className="video-controls">
@@ -282,13 +306,13 @@ const ProductsGrid = ({
                       className="video-control-btn"
                       onClick={() => toggleVideo(product.id)}
                     >
-                      {playingVideos.has(product.id) ? <Pause /> : <Play />}
+                      <i className={`fas ${playingVideos.has(product.id) ? 'fa-pause' : 'fa-play'}`}></i>
                     </button>
                   </div>
                   
                   <div className="product-overlay">
                     <button className="quick-view-btn">
-                      <Eye />
+                      <i className="fas fa-eye"></i>
                       View Details
                     </button>
                   </div>
@@ -299,11 +323,11 @@ const ProductsGrid = ({
                   
                   <div className="supplier-info">
                     <div className="supplier-name">
-                      <Factory className="supplier-icon" />
+                      <i className="fas fa-industry supplier-icon"></i>
                       <span>{product.supplier}</span>
                     </div>
                     <div className="supplier-location">
-                      <MapPin className="location-icon" />
+                      <i className="fas fa-map-marker-alt location-icon"></i>
                       <span>{product.location}</span>
                     </div>
                   </div>
@@ -316,7 +340,10 @@ const ProductsGrid = ({
                   <div className="product-rating">
                     <div className="stars">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className={i < Math.floor(product.rating) ? 'filled' : 'empty'} />
+                        <i 
+                          key={i} 
+                          className={`fas fa-star ${i < Math.floor(product.rating) ? 'filled' : 'empty'}`}
+                        ></i>
                       ))}
                     </div>
                     <span className="rating-value">{product.rating}</span>
@@ -336,25 +363,25 @@ const ProductsGrid = ({
 
                   <div className="product-features">
                     <span className="feature-tag">
-                      <Users className="feature-icon" />
+                      <i className="fas fa-user features-icon"></i>
                       MOQ: {product.minOrder}
                     </span>
                     <span className="feature-tag">
-                      <Package className="feature-icon" />
+                      <i className="fas fa-box features-icon"></i>
                       Max: {product.maxOrder.toLocaleString()}
                     </span>
                   </div>
 
                   <div className="action-buttons">
                     <button className="contact-btn">
-                      <Phone />
+                      <i className="fas fa-phone"></i>
                       Call Now
                     </button>
                     <button
                       className={`inquiry-btn ${inquiryItems.has(product.id) ? 'sent' : ''}`}
                       onClick={() => sendInquiry(product.id)}
                     >
-                      <MessageCircle />
+                      <i className="fas fa-comment-dots"></i>
                       {inquiryItems.has(product.id) ? 'Inquiry Sent' : 'Send Inquiry'}
                     </button>
                   </div>
