@@ -233,157 +233,182 @@ const ProductsGrid = ({
             {filteredProducts.map(product => (
               <div 
                 key={product.id} 
-                className="product-card"
+                className={`product-card ${playingVideos.has(product.id) ? 'video-playing' : ''}`}
                 onMouseEnter={() => setHoveredCard(product.id)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                <div className="product-video-container">
-  {playingVideos.has(product.id) ? (
-    product.video.includes("youtube.com") || product.video.includes("youtu.be") ? (
-  <iframe
-    className="product-video"
-    src={
-  product.video.includes("shorts/")
-    ? `https://www.youtube.com/embed/${product.video.split("shorts/")[1].split("?")[0]}?autoplay=1&mute=1`
-    : product.video.replace("watch?v=", "embed/").split("&")[0] + "?autoplay=1&mute=1"
-}
-    title={product.name}
-    frameBorder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowFullScreen
-  ></iframe>
-) : product.video.includes("instagram.com") ? (
-  <iframe
-    className="product-video"
-    src={product.video + "embed"}
-    title={product.name}
-    frameBorder="0"
-    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
-    allowFullScreen
-  ></iframe>
-) : (
-  <video
-    className="product-video"
-    src={product.video}
-    autoPlay
-    muted
-    loop
-    playsInline
-    controls
-    poster={product.thumbnail}
-  />
-    )
-  ) : (
-    <div className="product-thumbnail">
-      <img src={product.thumbnail} alt={product.name} className="product-image" />
-      <div className="play-overlay">
-        <button 
-          className="play-btn"
-          onClick={() => toggleVideo(product.id)}
-        >
-          <i className="fas fa-play play-icon"></i>
-        </button>
-      </div>
-    </div>
-  )}  
+                {/* Video Section */}
+                <div className="product-video-section">
+                  <div className="product-video-container">
+                    {playingVideos.has(product.id) ? (
+                      product.video.includes("youtube.com") || product.video.includes("youtu.be") ? (
+                        <iframe
+                          className="product-video"
+                          src={
+                            product.video.includes("shorts/")
+                              ? `https://www.youtube.com/embed/${product.video.split("shorts/")[1].split("?")[0]}?autoplay=1&mute=1`
+                              : product.video.replace("watch?v=", "embed/").split("&")[0] + "?autoplay=1&mute=1"
+                          }
+                          title={product.name}
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
+                      ) : product.video.includes("instagram.com") ? (
+                        <iframe
+                          className="product-video"
+                          src={product.video + "embed"}
+                          title={product.name}
+                          frameBorder="0"
+                          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
+                      ) : (
+                        <video
+                          className="product-video"
+                          src={product.video}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          controls
+                          poster={product.thumbnail}
+                        />
+                      )
+                    ) : (
+                      <div className="product-thumbnail">
+                        <img src={product.thumbnail} alt={product.name} className="product-image" />
+                        <div className="play-overlay">
+                          <button 
+                            className="play-btn"
+                            onClick={() => toggleVideo(product.id)}
+                          >
+                            <i className="fas fa-play play-icon"></i>
+                          </button>
+                        </div>
+                      </div>
+                    )}  
 
-                  
-                  <div className="product-badges">
-                    {product.badge && <span className="product-badge">{product.badge}</span>}
-                    {product.exportReady && <span className="export-badge">Export Ready</span>}
-                  </div>
-                  
-                  <button
-                    className={`wishlist-btn ${wishlistItems.has(product.id) ? 'active' : ''}`}
-                    onClick={() => toggleWishlist(product.id)}
-                    title="Add to Watchlist"
-                  >
-                    <i className="fas fa-heart"></i>
-                  </button>
-                  
-                  <div className="video-controls">
-                    <button 
-                      className="video-control-btn"
-                      onClick={() => toggleVideo(product.id)}
-                    >
-                      <i className={`fas ${playingVideos.has(product.id) ? 'fa-pause' : 'fa-play'}`}></i>
-                    </button>
-                  </div>
-                  
-                  <div className="product-overlay">
-                    <button className="quick-view-btn">
-                      <i className="fas fa-eye"></i>
-                      View Details
-                    </button>
+                    {/* Hide badges and wishlist when video is playing */}
+                    {!playingVideos.has(product.id) && (
+                      <>
+                        <div className="product-badges">
+                          {product.badge && <span className="product-badge">{product.badge}</span>}
+                          {product.exportReady && <span className="export-badge">Export Ready</span>}
+                        </div>
+                        
+                        <button
+                          className={`wishlist-btn ${wishlistItems.has(product.id) ? 'active' : ''}`}
+                          onClick={() => toggleWishlist(product.id)}
+                          title="Add to Watchlist"
+                        >
+                          <i className="fas fa-heart"></i>
+                        </button>
+                      </>
+                    )}
+                    
+                    {/* Video controls - play button when not playing, stop button when playing */}
+                    <div className="video-controls">
+                      {!playingVideos.has(product.id) ? (
+                        <button 
+                          className="video-control-btn play-video-btn"
+                          onClick={() => toggleVideo(product.id)}
+                          title="Play Video"
+                        >
+                          <i className="fas fa-play"></i>
+                        </button>
+                      ) : (
+                        <button 
+                          className="video-control-btn stop-video-btn"
+                          onClick={() => toggleVideo(product.id)}
+                          title="Stop Video"
+                        >
+                          <i className="fas fa-stop"></i>
+                        </button>
+                      )}
+                    </div>
+                    
+                    {/* Only show overlay when not playing video */}
+                    {!playingVideos.has(product.id) && (
+                      <div className="product-overlay">
+                        <button className="quick-view-btn">
+                          <i className="fas fa-eye"></i>
+                          View Details
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
 
-                <div className="product-info">
-                  <h4 className="product-name">{product.name}</h4>
-                  
-                  <div className="supplier-info">
-                    <div className="supplier-name">
-                      <i className="fas fa-industry supplier-icon"></i>
-                      <span>{product.supplier}</span>
+                {/* Content Section */}
+                <div className="product-content-section">
+                  <div className="product-info">
+                    <h4 className="product-name">{product.name}</h4>
+                    
+                    <div className="supplier-info">
+                      <div className="supplier-name">
+                        <i className="fas fa-industry supplier-icon"></i>
+                        <span>{product.supplier}</span>
+                      </div>
+                      <div className="supplier-location">
+                        <i className="fas fa-map-marker-alt location-icon"></i>
+                        <span>{product.location}</span>
+                      </div>
                     </div>
-                    <div className="supplier-location">
-                      <i className="fas fa-map-marker-alt location-icon"></i>
-                      <span>{product.location}</span>
+                    
+                    <div className="business-details">
+                      <span className="business-type">{product.businessType}</span>
+                      <span className="experience">{product.experience} experience</span>
                     </div>
-                  </div>
-                  
-                  <div className="business-details">
-                    <span className="business-type">{product.businessType}</span>
-                    <span className="experience">{product.experience} experience</span>
-                  </div>
-                  
-                  <div className="product-rating">
-                    <div className="stars">
-                      {[...Array(5)].map((_, i) => (
-                        <i 
-                          key={i} 
-                          className={`fas fa-star ${i < Math.floor(product.rating) ? 'filled' : 'empty'}`}
-                        ></i>
-                      ))}
+                    
+                    <div className="product-rating">
+                      <div className="stars">
+                        {[...Array(5)].map((_, i) => (
+                          <i 
+                            key={i} 
+                            className={`fas fa-star ${i < Math.floor(product.rating) ? 'filled' : 'empty'}`}
+                          ></i>
+                        ))}
+                      </div>
+                      <span className="rating-value">{product.rating}</span>
+                      <span className="rating-text">({product.reviews} reviews)</span>
                     </div>
-                    <span className="rating-value">{product.rating}</span>
-                    <span className="rating-text">({product.reviews} reviews)</span>
-                  </div>
 
-                  <div className="pricing-info">
-                    <div className="price-range">
-                      <span className="price-label">Price Range:</span>
-                      <span className="price-value">{product.priceRange}/piece</span>
+                    <div className="pricing-info">
+                      <div className="price-range">
+                        <span className="price-label">Price Range:</span>
+                        <span className="price-value">{product.priceRange}/piece</span>
+                      </div>
+                      <div className="order-quantity">
+                        <span className="moq-label">MOQ:</span>
+                        <span className="moq-value">{product.minOrder} pieces</span>
+                      </div>
                     </div>
-                    <div className="order-quantity">
-                      <span className="moq-label">MOQ:</span>
-                      <span className="moq-value">{product.minOrder} pieces</span>
+
+                    <div className="product-features">
+                      <span className="feature-tag">
+                        <i className="fas fa-user features-icon"></i>
+                        MOQ: {product.minOrder}
+                      </span>
+                      <span className="feature-tag">
+                        <i className="fas fa-box features-icon"></i>
+                        Max: {product.maxOrder.toLocaleString()}
+                      </span>
                     </div>
-                  </div>
 
-                  <div className="product-features">
-                    <span className="feature-tag">
-                      <i className="fas fa-user features-icon"></i>
-                      MOQ: {product.minOrder}
-                    </span>
-                    <span className="feature-tag">
-                      <i className="fas fa-box features-icon"></i>
-                      Max: {product.maxOrder.toLocaleString()}
-                    </span>
-                  </div>
-
-                  <div className="action-buttons">
-                    <button className="contact-btn">
-                      <i className="fas fa-phone"></i>
-                      Call Now
-                    </button>
-                    <button
-                      className={`inquiry-btn ${inquiryItems.has(product.id) ? 'sent' : ''}`}
-                      onClick={() => sendInquiry(product.id)}
-                    >
-                      <i className="fas fa-comment-dots"></i>
-                      {inquiryItems.has(product.id) ? 'Inquiry Sent' : 'Send Inquiry'}
-                    </button>
+                    <div className="action-buttons">
+                      <button className="contacts-btns">
+                        <i className="fas fa-phone"></i>
+                        Call Now
+                      </button>
+                      <button
+                        className={`inquirys-btns ${inquiryItems.has(product.id) ? 'sent' : ''}`}
+                        onClick={() => sendInquiry(product.id)}
+                      >
+                        <i className="fas fa-comment-dots"></i>
+                        {inquiryItems.has(product.id) ? 'Inquiry Sent' : 'Send Inquiry'}
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
