@@ -141,45 +141,152 @@
   color: #667eea;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+@media (max-width: 1024px) {
+  .buyer-hero {
+    padding: 6rem 0;
   }
-  
-  .hero-title {
-    font-size: 2.5rem;
+
+  .buyer-hero-container {
+    gap: 3rem;
   }
-  
-  .hero-stats {
-    flex-direction: column;
+
+  .buyer-hero-content {
+    order: 1;
+  }
+
+  .buyerhero-visual {
+    order: 2;
+    height: 350px;
+  }
+
+  .buyer-hero-title {
+    font-size: 2.8rem;
+  }
+
+  .buyer-hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .buyer-hero-stats {
     gap: 1rem;
   }
+
+  .floatings-card.card-2 {
+    right: 5%;
+  }
 }
 
-@media (max-width: 480px) {
-  .hero-title {
+/* For tablets portrait (768px and below) */
+@media (max-width: 768px) {
+
+  .buyer-hero-title {
     font-size: 2rem;
   }
-  
-  .hero-subtitle {
+
+  .buyer-hero-subtitle {
     font-size: 1rem;
+  }
+
+  .buyer-hero-stats {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .buyer-stat-item {
+    width: 30%;
+    justify-content: center;
+  }
+
+  .buyerhero-visual {
+    height: 300px;
+  }
+
+  .floatings-card {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .floatings-card.card-1 {
+    left: 2%;
+  }
+
+  .floatings-card.card-2 {
+    right: 2%;
+  }
+
+  .floatings-card.card-3 {
+    top: 70%;
+  }
+
+  .cards-icon {
+    width: 28px;
+    height: 28px;
   }
 }
 
+/* For mobile (426px and below) */
+@media (max-width: 426px) {
+  .buyer-hero {
+    margin-top: -80px;
+  }
+
+  .buyer-hero-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .buyer-hero-title {
+    font-size: 1.8rem;
+  }
+
+  .buyer-hero-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .buyer-hero-stats {
+    gap: 0.75rem;
+  }
+
+  .buyer-stat-item {
+    width: 30%;
+  }
+
+  .buyer-stat-number {
+    font-size: 1.2rem;
+  }
+
+  .buyer-stat-label {
+    font-size: 0.8rem;
+  }
+
+  .buyerhero-visual {
+    height: 250px;
+  }
+
+  .floatings-card {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .cards-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Category Section */
 
 .category-sections {
   padding: 4rem 0;
-  /* background: linear-gradient(135deg, #E8F6F7 0%, #D4F1F4 100%); */
   background-image: url(/src/components/images/Background.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-
-
 
 .category-containers {
   max-width: 1300px;
@@ -265,6 +372,100 @@
 .category-hover-effect {
   display: none;
 }
+
+.category-grids {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
+}
+
+.category-grids::-webkit-scrollbar {
+  display: none; 
+}
+
+@media (max-width: 1024px) {
+  .category-sections {
+    padding: 3rem 0;
+  }
+
+  .category-titless {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+  }
+
+  .category-grids {
+    gap: 2rem;
+  }
+
+  .category-cardsss {
+    flex: 0 0 auto;
+    width: 140px;
+    scroll-snap-align: start;
+  }
+}
+
+@media (max-width: 768px) {
+  .category-sections {
+    padding: 2.5rem 0;
+  }
+
+  .category-titless {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .category-grids {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .category-cardsss {
+    width: 120px;
+  }
+
+  .categories-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.5rem;
+  }
+
+  .categories-name {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 426px) {
+  .category-sections {
+    padding: 2rem 0;
+  }
+
+  .category-titless {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .category-cardsss {
+    width: 100px;
+  }
+
+  .categories-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+  }
+
+  .categories-name {
+    font-size: 0.85rem;
+  }
+
+  .category-subtitle-text {
+    font-size: 0.7rem;
+  }
+}
+
 
 /* Indian B2B Marketplace Styles */
 
@@ -1022,7 +1223,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 426px) {
   .products-container {
     padding: 0 1rem;
   }
@@ -1362,5 +1563,29 @@
 .trust-feature-main:nth-child(2n+1) {
   animation: float 4s ease-in-out infinite;
   animation-delay: 2s;
+}
+
+@media (max-width: 426px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .trust-stats {
+    grid-template-columns: repeat(auto-fit,minmax(160px, 1fr));
+    margin-bottom: 2rem;
+  }
+
+  .trust-badges {
+    justify-content: flex-start;
+  }
+
+  .badge-item {
+    padding: 0.6rem 1rem;
+    font-size: 0.6rem;
+  }
 }
 
