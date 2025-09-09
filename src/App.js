@@ -19,6 +19,7 @@ import BuyerLeads from './components/Modules/SellerDashboard/buyerleads'
 import Settings from './components/Modules/SellerDashboard/settings'
 import Help from './components/Modules/SellerDashboard/help'
 import BuyerPage from './components/Pages/buyerpage'
+import ExplorePage from './components/Pages/explorepage'
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
           <Route path='/settings' element={<Settings />} />
           <Route path='/help' element={<Help />} />
           <Route path='/buyerpage' element={<BuyerPage />} />
+          <Route path='/explorepage' element={<ExplorePage />} />
         </Routes>
       </BrowserRouter>
     </div>

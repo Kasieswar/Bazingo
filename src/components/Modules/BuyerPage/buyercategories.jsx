@@ -30,7 +30,16 @@ const CategoriesSection = ({ onCategoryChange }) => {
   return (
     <section className="category-sections">
       <div className="category-containers">
-        <h3 className="category-titless">Shop by Categories</h3>
+        <div className="category-header">
+  <h3 className="category-titless">Shop by Categories</h3>
+  <button 
+    className="explore-btn"
+    onClick={() => window.location.href = "/explorepage"}
+  >
+    Explore All
+  </button>
+</div>
+
         <div className="category-grids">
           {categories.map(category => (
             <button

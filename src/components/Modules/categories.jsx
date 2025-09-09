@@ -19,8 +19,22 @@ function Categories() {
     return (
         <div>
             <section className="category-section">
+            <div className="category-header">
+              <div>
             <h2 className="category-title">Explore by Category</h2>
-            <p className="category-subtitle">Find what you need, faster. Browse products by popular categories</p>
+            <p className="category-subtitle">
+            Find what you need, faster. Browse products by popular categories
+            </p>
+            </div>
+            <button 
+              className="explore-btn"
+              onClick={() => window.location.href = "/explorepage"}
+            >
+              Explore All
+            </button>
+          </div>
+          
+
 
             <div className="category-grids">
           {categories.map(category => (
