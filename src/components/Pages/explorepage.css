@@ -1,3 +1,793 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Hero Section Styles */
+.heros-section {
+  background: linear-gradient(135deg, #D4F1F4 0%, #0097A7 25%, #005F6A 75%, #003D40 100%);
+  height: 100vh;
+  padding: 4rem 0 0 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  margin-top: -80px;
+}
+
+/* Animated Background Elements */
+.background-decorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Floating Orbs with 3D Effect */
+.floating-orb {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgba(212, 241, 244, 0.3), rgba(0, 151, 167, 0.2));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 241, 244, 0.2);
+  animation: float 6s ease-in-out infinite;
+  box-shadow: 
+    0 8px 32px rgba(0, 151, 167, 0.3),
+    inset 0 2px 8px rgba(212, 241, 244, 0.3);
+}
+
+.orb-1 {
+  width: 120px;
+  height: 120px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+  animation-duration: 8s;
+}
+
+.orb-2 {
+  width: 200px;
+  height: 200px;
+  top: 20%;
+  right: 15%;
+  animation-delay: -2s;
+  animation-duration: 10s;
+}
+
+.orb-3 {
+  width: 150px;
+  height: 150px;
+  bottom: 15%;
+  left: 20%;
+  animation-delay: -4s;
+  animation-duration: 7s;
+}
+
+.orb-4 {
+  width: 80px;
+  height: 80px;
+  top: 60%;
+  right: 25%;
+  animation-delay: -1s;
+  animation-duration: 9s;
+}
+
+.orb-5 {
+  width: 100px;
+  height: 100px;
+  bottom: 30%;
+  right: 10%;
+  animation-delay: -3s;
+  animation-duration: 11s;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px) scale(1.1);
+  }
+  50% {
+    transform: translateY(-40px) translateX(-10px) scale(0.9);
+  }
+  75% {
+    transform: translateY(-20px) translateX(15px) scale(1.05);
+  }
+}
+
+/* Animated Particles */
+.particle {
+  position: absolute;
+  color: rgba(212, 241, 244, 0.6);
+  animation: particle-float 8s ease-in-out infinite;
+}
+
+.particle-1 {
+  top: 25%;
+  left: 25%;
+  animation-delay: 0s;
+}
+
+.particle-2 {
+  top: 15%;
+  right: 30%;
+  animation-delay: -2s;
+}
+
+.particle-3 {
+  bottom: 25%;
+  left: 15%;
+  animation-delay: -4s;
+}
+
+.particle-4 {
+  top: 50%;
+  right: 20%;
+  animation-delay: -1s;
+}
+
+.particle-5 {
+  bottom: 35%;
+  right: 35%;
+  animation-delay: -3s;
+}
+
+@keyframes particle-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+/* 3D Geometric Shapes */
+.geometric-shape {
+  position: absolute;
+  background: linear-gradient(45deg, rgba(0, 151, 167, 0.3), rgba(212, 241, 244, 0.2));
+  border: 2px solid rgba(212, 241, 244, 0.3);
+  transform-style: preserve-3d;
+  animation: rotate3d 15s linear infinite;
+}
+
+.shape-1 {
+  width: 60px;
+  height: 60px;
+  top: 30%;
+  left: 80%;
+  transform: rotateX(45deg) rotateY(45deg);
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 40px;
+  height: 40px;
+  bottom: 20%;
+  left: 70%;
+  border-radius: 50%;
+  animation-delay: -5s;
+}
+
+.shape-3 {
+  width: 50px;
+  height: 50px;
+  top: 70%;
+  left: 5%;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  animation-delay: -10s;
+}
+
+@keyframes rotate3d {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+/* Container */
+.containerss {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+/* Hero Content */
+.heros-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Hero Badge */
+.heroes-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(212, 241, 244, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 241, 244, 0.2);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  color: #D4F1F4;
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-bottom: 2rem;
+  animation: badge-glow 2s ease-in-out infinite alternate;
+}
+
+.badges-icon {
+  width: 1rem;
+  height: 1rem;
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes badge-glow {
+  0% {
+    box-shadow: 0 4px 20px rgba(212, 241, 244, 0.3);
+  }
+  100% {
+    box-shadow: 0 8px 40px rgba(212, 241, 244, 0.5);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+
+/* Hero Title */
+.heroes-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.title-line {
+  display: block;
+  position: relative;
+}
+
+.title-line:first-child {
+  color: #F1F5F9;
+  margin-bottom: 0.5rem;
+}
+
+.title-highlight {
+  background: linear-gradient(135deg, #D4F1F4 0%, #0097A7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  animation: title-shimmer 3s ease-in-out infinite;
+}
+
+.title-underline {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #0097A7, transparent);
+  border-radius: 2px;
+  animation: underline-expand 2s ease-out;
+}
+
+@keyframes title-shimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes underline-expand {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 200px;
+  }
+}
+
+/* Hero Description */
+.heroes-description {
+  font-size: 1.25rem;
+  color: rgba(241, 245, 249, 0.9);
+  margin-bottom: 3rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.description-highlight {
+  color: #D4F1F4;
+  font-weight: 600;
+}
+
+/* Hero Stats */
+.heroes-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 1.5rem 1rem;
+  background: rgba(241, 245, 249, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(241, 245, 249, 0.2);
+}
+
+.statz-item {
+  text-align: center;
+}
+
+.statz-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #D4F1F4;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.statz-label {
+  font-size: 0.875rem;
+  color: rgba(241, 245, 249, 0.8);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.statz-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(241, 245, 249, 0.3);
+}
+
+/* Hero Actions */
+.heroes-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button.primary {
+  background: linear-gradient(135deg, #0097A7, #005F6A);
+  color: white;
+  box-shadow: 0 8px 32px rgba(0, 151, 167, 0.3);
+}
+
+.cta-button.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 48px rgba(0, 151, 167, 0.4);
+  background: linear-gradient(135deg, #00B4CC, #007A87);
+}
+
+.cta-button.secondary {
+  background: rgba(241, 245, 249, 0.1);
+  color: #F1F5F9;
+  border: 2px solid rgba(241, 245, 249, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.cta-button.secondary:hover {
+  background: rgba(241, 245, 249, 0.2);
+  border-color: #D4F1F4;
+  transform: translateY(-2px);
+}
+
+.button-icon {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover .button-icon {
+  transform: translateX(3px);
+}
+
+@media (max-width: 1024px) {
+  .heros-section {
+    min-height: 95vh;
+    padding: 3rem 0;
+  }
+  
+  .containerss {
+    max-width: 95%;
+    padding: 0 1.5rem;
+  }
+  
+  .heroes-title {
+    font-size: 3rem;
+  }
+  
+  .heroes-description {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .heroes-stats {
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+  }
+  
+  .statz-number {
+    font-size: 1.8rem;
+  }
+  
+  /* Reduce orb sizes for medium screens */
+  .orb-1 {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .orb-2 {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .orb-3 {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .orb-4 {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .orb-5 {
+    width: 80px;
+    height: 80px;
+  }
+  
+  /* Adjust geometric shapes */
+  .shape-1 {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .shape-2 {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .shape-3 {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Medium screens and below (768px) */
+@media (max-width: 768px) {
+  .heros-section {
+    min-height: 90vh;
+    padding: 7rem 0;
+  }
+  
+  .containerss {
+    padding: 0 1rem;
+  }
+  
+  .heroes-badge {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .badges-icon {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+  
+  .heroes-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .title-underline {
+    width: 150px;
+  }
+  
+  .heroes-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .heroes-stats {
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .statz-divider {
+    width: 1px;
+    height: 40px;
+  }
+  
+  .statz-number {
+    font-size: 1.75rem;
+  }
+  
+  .statz-label {
+    font-size: 0.8rem;
+  }
+  
+  .heroes-actions {
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .cta-button {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+    padding: 0.875rem 1.5rem;
+  }
+  
+  /* Hide some orbs and reduce others for mobile */
+  .orb-2, .orb-4 {
+    display: none;
+  }
+  
+  .orb-1 {
+    width: 80px;
+    height: 80px;
+    opacity: 0.7;
+  }
+  
+  .orb-3 {
+    width: 100px;
+    height: 100px;
+    opacity: 0.7;
+  }
+  
+  .orb-5 {
+    width: 60px;
+    height: 60px;
+    opacity: 0.7;
+  }
+  
+  /* Hide some particles for performance */
+  .particle-2, .particle-4 {
+    display: none;
+  }
+  
+  /* Reduce geometric shapes */
+  .shape-1 {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .shape-2 {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .shape-3 {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Small screens and below (426px) */
+@media (max-width: 426px) {
+  .heros-section {
+    min-height: 90vh;
+    padding: 7rem 0;
+  }
+  
+  .containerss {
+    padding: 0 0.75rem;
+  }
+  
+  .heroes-badge {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .badges-icon {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+  
+  .heroes-title {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .title-line:first-child {
+    margin-bottom: 0.25rem;
+  }
+  
+  .title-underline {
+    width: 120px;
+    height: 3px;
+  }
+  
+  .heroes-description {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+    line-height: 1.6;
+  }
+  
+  .heroes-stats {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.25rem 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .statz-number {
+    font-size: 1.5rem;
+  }
+  
+  .statz-label {
+    font-size: 0.75rem;
+  }
+  
+  .statz-divider {
+    width: 100px;
+    height: 1px;
+  }
+  
+  .cta-button {
+    max-width: 100%;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+  
+  .button-icon {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+  
+  /* Further reduce orbs for very small screens */
+  .orb-1 {
+    width: 60px;
+    height: 60px;
+    top: 15%;
+    left: 5%;
+  }
+  
+  .orb-3 {
+    width: 80px;
+    height: 80px;
+    bottom: 20%;
+    left: 15%;
+  }
+  
+  .orb-5 {
+    width: 50px;
+    height: 50px;
+    bottom: 35%;
+    right: 5%;
+  }
+  
+  /* Hide more particles */
+  .particle-3, .particle-5 {
+    display: none;
+  }
+  
+  /* Minimize geometric shapes */
+  .shape-1 {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .shape-2 {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .shape-3 {
+    width: 28px;
+    height: 28px;
+  }
+
+  .cta-button.primary {
+  width: 45%;
+  }
+
+  .cta-button.secondary {
+    width: 45%;
+  }
+
+  
+  /* Reduce animation intensity for better performance */
+  .floating-orb {
+    animation-duration: 8s;
+  }
+  
+  .particle {
+    animation-duration: 10s;
+  }
+  
+  .geometric-shape {
+    animation-duration: 20s;
+  }
+}
+
+/* Extra small screens (360px and below) */
+@media (max-width: 360px) {
+  .heros-section {
+    padding: 1.5rem 0;
+  }
+  
+  .containerss {
+    padding: 0 0.5rem;
+  }
+  
+  .heroes-title {
+    font-size: 1.75rem;
+  }
+  
+  .heroes-description {
+    font-size: 0.85rem;
+    padding: 0;
+  }
+  
+  .heroes-stats {
+    padding: 1rem 0.5rem;
+  }
+  
+  .statz-number {
+    font-size: 1.3rem;
+  }
+  
+  .cta-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  /* Hide all decorative elements for performance */
+  .orb-3, .orb-5 {
+    display: none;
+  }
+  
+  .particle-1 {
+    display: none;
+  }
+  
+  .shape-1, .shape-2, .shape-3 {
+    display: none;
+  }
+}
+
 /* Main section */
 .explore-categories {
   padding: 6rem 0;
@@ -251,5 +1041,145 @@
   
   .category-description {
     font-size: 0.7rem;
+  }
+}
+
+
+/* CTA Banner */
+.cta-banner {
+  padding: 64px 0;
+  background: linear-gradient(to right, #0d9488, #0891b2);
+  color: white;
+  margin: 2rem 1rem;
+}
+
+.cta-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/* Title */
+.cta-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+/* Description */
+.cta-description {
+  font-size: 20px;
+  color: #ccfbf1;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+/* Buttons Container */
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  max-width: 512px;
+  margin: 0 auto;
+}
+
+/* Button Base */
+.cta-btn {
+  flex: 1;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  font-size: 16px;
+}
+
+/* Primary Button */
+.cta-btn-primary {
+  background: white;
+  color: #0d9488;
+  border: 2px solid white;
+}
+
+.cta-btn-primary:hover {
+  background: #f9fafb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Secondary Button */
+.cta-btn-secondary {
+  background: #0f766e;
+  color: white;
+  border: 2px solid transparent;
+}
+
+.cta-btn-secondary:hover {
+  background: #134e4a;
+  border-color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Icons */
+.cta-btn-icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 12px;
+  transition: transform 0.3s ease;
+}
+
+.cta-btn:hover .cta-btn-icon {
+  transform: scale(1.1);
+}
+
+/* Footer */
+.cta-footer {
+  margin-top: 32px;
+}
+
+.cta-footer-text {
+  font-size: 14px;
+  color: #99f6e4;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+  .cta-container {
+    padding: 0 24px;
+  }
+  
+  .cta-buttons {
+    flex-direction: row;
+  }
+  
+  .cta-title {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 768px) {
+  .cta-title {
+    font-size: 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cta-container {
+    padding: 0 32px;
   }
 }
