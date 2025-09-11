@@ -1,16 +1,16 @@
 import React from 'react'
 import Header from '../Modules/header'
 import Footer from '../Modules/footer'
-import ExploreCategories from '../Modules/Explore/explorecategories'
 import CTABanner from '../Modules/Explore/ctabanner'
 import ExploreHero from '../Modules/Explore/explorehero'
+import ExploreProducts from '../Modules/Explore/exploreproducts'
 
 function ExplorePage() {
   return (
     <div>
       <Header />
       <ExploreHero />
-      <ExploreCategories />
+      <ExploreProducts />
       <CTABanner />
       <Footer />
     </div>

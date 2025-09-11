@@ -204,14 +204,14 @@ const ProductsGrid = ({
   };
 
   return (
-    <section className="products-section">
-      <div className="products-container">
+    <section className="products-sectionz">
+      <div className="products-containerz">
         <div className="products-header">
-          <h3 className="section-title">
+          <h3 className="section-titlez">
             {getCategoryName()}
-            <span className="results-count">({filteredProducts.length} suppliers)</span>
+            <span className="results-countz">({filteredProducts.length} suppliers)</span>
           </h3>
-          <div className="sort-options">
+          <div className="sort-optionsz">
             <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
               <option value="featured">Sort by: Featured</option>
               <option value="priceLow">Price: Low to High</option>
@@ -223,27 +223,27 @@ const ProductsGrid = ({
         </div>
 
         {filteredProducts.length === 0 ? (
-          <div className="no-products">
-            <div className="no-products-icon">🏭</div>
+          <div className="no-productsz">
+            <div className="no-products-iconz">🏭</div>
             <h4>No suppliers found</h4>
             <p>Try adjusting your search terms or selecting a different category</p>
           </div>
         ) : (
-          <div className="products-grid">
+          <div className="products-gridz">
             {filteredProducts.map(product => (
               <div 
                 key={product.id} 
-                className={`product-card ${playingVideos.has(product.id) ? 'video-playing' : ''}`}
+                className={`product-cardz ${playingVideos.has(product.id) ? 'video-playing' : ''}`}
                 onMouseEnter={() => setHoveredCard(product.id)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
                 {/* Video Section */}
-                <div className="product-video-section">
-                  <div className="product-video-container">
+                <div className="product-videoz-section">
+                  <div className="product-videoz-container">
                     {playingVideos.has(product.id) ? (
                       product.video.includes("youtube.com") || product.video.includes("youtu.be") ? (
                         <iframe
-                          className="product-video"
+                          className="product-videoz"
                           src={
                             product.video.includes("shorts/")
                               ? `https://www.youtube.com/embed/${product.video.split("shorts/")[1].split("?")[0]}?autoplay=1&mute=1`
@@ -256,7 +256,7 @@ const ProductsGrid = ({
                         ></iframe>
                       ) : product.video.includes("instagram.com") ? (
                         <iframe
-                          className="product-video"
+                          className="product-videoz"
                           src={product.video + "embed"}
                           title={product.name}
                           frameBorder="0"
@@ -265,7 +265,7 @@ const ProductsGrid = ({
                         ></iframe>
                       ) : (
                         <video
-                          className="product-video"
+                          className="product-videoz"
                           src={product.video}
                           autoPlay
                           muted
@@ -276,14 +276,14 @@ const ProductsGrid = ({
                         />
                       )
                     ) : (
-                      <div className="product-thumbnail">
-                        <img src={product.thumbnail} alt={product.name} className="product-image" />
-                        <div className="play-overlay">
+                      <div className="productz-thumbnail">
+                        <img src={product.thumbnail} alt={product.name} className="product-imagez" />
+                        <div className="play-overlayz">
                           <button 
-                            className="play-btn"
+                            className="play-btnz"
                             onClick={() => toggleVideo(product.id)}
                           >
-                            <i className="fas fa-play play-icon"></i>
+                            <i className="fas fa-play play-iconz"></i>
                           </button>
                         </div>
                       </div>
@@ -292,13 +292,13 @@ const ProductsGrid = ({
                     {/* Hide badges and wishlist when video is playing */}
                     {!playingVideos.has(product.id) && (
                       <>
-                        <div className="product-badges">
-                          {product.badge && <span className="product-badge">{product.badge}</span>}
-                          {product.exportReady && <span className="export-badge">Export Ready</span>}
+                        <div className="product-badgesz">
+                          {product.badge && <span className="product-badgez">{product.badge}</span>}
+                          {product.exportReady && <span className="export-badgez">Export Ready</span>}
                         </div>
                         
                         <button
-                          className={`wishlist-btn ${wishlistItems.has(product.id) ? 'active' : ''}`}
+                          className={`wishlist-btnz ${wishlistItems.has(product.id) ? 'active' : ''}`}
                           onClick={() => toggleWishlist(product.id)}
                           title="Add to Watchlist"
                         >
@@ -308,10 +308,10 @@ const ProductsGrid = ({
                     )}
                     
                     {/* Video controls - play button when not playing, stop button when playing */}
-                    <div className="video-controls">
+                    <div className="video-controlsz">
                       {!playingVideos.has(product.id) ? (
                         <button 
-                          className="video-control-btn play-video-btn"
+                          className="video-control-btnz play-video-btnz"
                           onClick={() => toggleVideo(product.id)}
                           title="Play Video"
                         >
@@ -319,7 +319,7 @@ const ProductsGrid = ({
                         </button>
                       ) : (
                         <button 
-                          className="video-control-btn stop-video-btn"
+                          className="video-control-btnz stop-video-btnz"
                           onClick={() => toggleVideo(product.id)}
                           title="Stop Video"
                         >
@@ -330,8 +330,8 @@ const ProductsGrid = ({
                     
                     {/* Only show overlay when not playing video */}
                     {!playingVideos.has(product.id) && (
-                      <div className="product-overlay">
-                        <button className="quick-view-btn">
+                      <div className="product-overlayz">
+                        <button className="quick-view-btnz">
                           <i className="fas fa-eye"></i>
                           View Details
                         </button>
@@ -341,28 +341,28 @@ const ProductsGrid = ({
                 </div>
 
                 {/* Content Section */}
-                <div className="product-content-section">
-                  <div className="product-info">
-                    <h4 className="product-name">{product.name}</h4>
+                <div className="product-content-sectionz">
+                  <div className="product-infoz">
+                    <h4 className="product-namez">{product.name}</h4>
                     
-                    <div className="supplier-info">
-                      <div className="supplier-name">
-                        <i className="fas fa-industry supplier-icon"></i>
+                    <div className="supplier-infoz">
+                      <div className="supplier-namez">
+                        <i className="fas fa-industry supplier-iconz"></i>
                         <span>{product.supplier}</span>
                       </div>
-                      <div className="supplier-location">
-                        <i className="fas fa-map-marker-alt location-icon"></i>
+                      <div className="supplier-locationz">
+                        <i className="fas fa-map-marker-alt location-iconz"></i>
                         <span>{product.location}</span>
                       </div>
                     </div>
                     
-                    <div className="business-details">
-                      <span className="business-type">{product.businessType}</span>
+                    <div className="business-detailsz">
+                      <span className="business-typez">{product.businessType}</span>
                       <span className="experience">{product.experience} experience</span>
                     </div>
                     
-                    <div className="product-rating">
-                      <div className="stars">
+                    <div className="product-ratings">
+                      <div className="starsz">
                         {[...Array(5)].map((_, i) => (
                           <i 
                             key={i} 
@@ -370,39 +370,39 @@ const ProductsGrid = ({
                           ></i>
                         ))}
                       </div>
-                      <span className="rating-value">{product.rating}</span>
-                      <span className="rating-text">({product.reviews} reviews)</span>
+                      <span className="rating-values">{product.rating}</span>
+                      <span className="rating-texts">({product.reviews} reviews)</span>
                     </div>
 
-                    <div className="pricing-info">
-                      <div className="price-range">
-                        <span className="price-label">Price Range:</span>
-                        <span className="price-value">{product.priceRange}/piece</span>
+                    <div className="pricing-infoz">
+                      <div className="price-ranges">
+                        <span className="price-labels">Price Range:</span>
+                        <span className="price-values">{product.priceRange}/piece</span>
                       </div>
-                      <div className="order-quantity">
-                        <span className="moq-label">MOQ:</span>
-                        <span className="moq-value">{product.minOrder} pieces</span>
+                      <div className="order-quantityz">
+                        <span className="moq-labelz">MOQ:</span>
+                        <span className="moq-valuez">{product.minOrder} pieces</span>
                       </div>
                     </div>
 
-                    <div className="product-features">
-                      <span className="feature-tag">
+                    <div className="product-featuresz">
+                      <span className="feature-tagz">
                         <i className="fas fa-user features-icon"></i>
                         MOQ: {product.minOrder}
                       </span>
-                      <span className="feature-tag">
+                      <span className="feature-tagz">
                         <i className="fas fa-box features-icon"></i>
                         Max: {product.maxOrder.toLocaleString()}
                       </span>
                     </div>
 
-                    <div className="action-buttons">
-                      <button className="contacts-btns">
+                    <div className="action-buttonsz">
+                      <button className="contacts-btnsz">
                         <i className="fas fa-phone"></i>
                         Call Now
                       </button>
                       <button
-                        className={`inquirys-btns ${inquiryItems.has(product.id) ? 'sent' : ''}`}
+                        className={`inquirys-btnsz ${inquiryItems.has(product.id) ? 'sent' : ''}`}
                         onClick={() => sendInquiry(product.id)}
                       >
                         <i className="fas fa-comment-dots"></i>

@@ -54,10 +54,10 @@ const TrustSection = () => {
   ];
 
   return (
-    <section className="trust-section">
+    <section className="trust-sectionz">
       <div className="trust-container">
-        <div className="trust-header">
-          <h3 className="section-title">Why Shop with Bazingo?</h3>
+        <div className="trust-headerz">
+          <h3 className="section-titlezz">Why Shop with Bazingo?</h3>
           <p className="section-subtitle">
             Join millions of satisfied customers who trust us for their shopping needs
           </p>
