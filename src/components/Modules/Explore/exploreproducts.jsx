@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Smartphone, Shirt, Utensils, Heart, Dumbbell, BookOpen, Plane, PawPrint, Home,  Palette,  Baby, Laptop, Headphones,Watch,Camera,Monitor, Cpu,HardDrive,Gamepad2,Filter, ChevronDown, Grid, List, Star} from 'lucide-react';
 import '../../Pages/explorepage.css';
+import TshirtVideo from '../../Videos/Tshirt.mp4'
 
 const ExploreProducts = () => {
   const [selectedCategory, setSelectedCategory] = useState(0);
@@ -147,7 +148,7 @@ const ExploreProducts = () => {
       id: 1,
       name: 'Wireless Bluetooth Headphones',
       image: 'https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      video: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4',
+      video: 'https://youtube.com/shorts/XPhJGYJXY80?si=4ABv_3OVUmCZpjjv',
       priceRange: '₹800 - ₹1,200',
       minOrder: 100,
       maxOrder: 10000,
@@ -207,7 +208,7 @@ const ExploreProducts = () => {
       id: 4,
       name: 'Cotton T-Shirts (Export Quality)',
       image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=300&fit=crop',
-      video: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4',
+      video: TshirtVideo,
       priceRange: '₹120 - ₹180',
       minOrder: 500,
       maxOrder: 50000,
@@ -453,12 +454,14 @@ const ExploreProducts = () => {
           ) : (
             <div className="listing-product-thumbnail">
               <img src={product.image} alt={product.name} className="listing-product-image" />
-              <div className="listing-play-overlay">
+              
+              {/* Center Play Button - Always visible when video not playing */}
+              <div className="listing-center-play-overlay">
                 <button 
-                  className="listing-play-btn"
+                  className="listing-center-play-btn"
                   onClick={() => toggleVideo(product.id)}
                 >
-                  <i className="fas fa-play listing-play-icon"></i>
+                  <i className="fas fa-play listing-center-play-icon"></i>
                 </button>
               </div>
             </div>
@@ -484,17 +487,9 @@ const ExploreProducts = () => {
             </>
           )}
           
-          {/* Video controls */}
-          <div className="listing-video-controls">
-            {!playingVideos.has(product.id) ? (
-              <button 
-                className="listing-video-control-btn listing-play-video-btn"
-                onClick={() => toggleVideo(product.id)}
-                title="Play Video"
-              >
-                <i className="fas fa-play"></i>
-              </button>
-            ) : (
+          {/* Video controls - only show stop button when video is playing */}
+          {playingVideos.has(product.id) && (
+            <div className="listing-video-controls">
               <button 
                 className="listing-video-control-btn listing-stop-video-btn"
                 onClick={() => toggleVideo(product.id)}
@@ -502,11 +497,11 @@ const ExploreProducts = () => {
               >
                 <i className="fas fa-stop"></i>
               </button>
-            )}
-          </div>
+            </div>
+          )}
           
-          {/* Quick view overlay - hidden when video is playing */}
-          {!playingVideos.has(product.id) && (
+          {/* Quick view overlay - only show on hover when video is not playing */}
+          {!playingVideos.has(product.id) && hoveredProduct === product.id && (
             <div className="listing-product-overlay">
               <button className="listing-quick-view-btn">
                 <i className="fas fa-eye"></i>
@@ -683,7 +678,113 @@ const ExploreProducts = () => {
         )}
 
         {/* Product Listing Section */}
-        
+        <section className="product-listing-main">
+          <div className="listing-container">
+            {/* Header */}
+            <div className="listing-header">
+              <div className="listing-header-content">
+                <h2 className="listing-page-title">
+                  {selectedSubCategory !== null 
+                    ? categories[selectedCategory].subCategories[selectedSubCategory].name
+                    : categories[selectedCategory].name} Products
+                </h2>
+                <p className="listing-supplier-count">({filteredProducts.length} products)</p>
+              </div>
+              
+              <div className="listing-header-controls">
+                {/* Mobile Filter Button */}
+                <button
+                  onClick={() => setShowFilters(!showFilters)}
+                  className="listing-mobile-filter-button"
+                >
+                  <Filter className="listing-button-icon" />
+                  Filters
+                </button>
+
+                {/* View Toggle */}
+                <div className="listing-view-toggle">
+                  <button
+                    onClick={() => setViewType('grid')}
+                    className={`listing-view-button ${viewType === 'grid' ? 'active' : ''}`}
+                  >
+                    <Grid className="listing-button-icon" />
+                  </button>
+                  <button
+                    onClick={() => setViewType('list')}
+                    className={`listing-view-button ${viewType === 'list' ? 'active' : ''}`}
+                  >
+                    <List className="listing-button-icon" />
+                  </button>
+                </div>
+
+                {/* Sort Dropdown */}
+                <div className="listing-sort-dropdown">
+                  <select
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value)}
+                    className="listing-sort-select"
+                  >
+                    <option value="featured">Sort by: Featured</option>
+                    <option value="newest">Newest</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Highest Rated</option>
+                  </select>
+                  <ChevronDown className="listing-dropdown-icon" />
+                </div>
+              </div>
+            </div>
+
+            <div className="listing-main-content">
+              {/* Desktop Sidebar Filters */}
+              <div className="listing-desktop-filters">
+                <FilterSidebar />
+              </div>
+
+              {/* Mobile Filters */}
+              {showFilters && (
+                <div className="listing-mobile-filters">
+                  <FilterSidebar />
+                </div>
+              )}
+
+              {/* Products Grid or No Products */}
+              <div className="listing-products-section">
+                {filteredProducts.length > 0 ? (
+                  <>
+                    <div className={`listing-products-grid ${viewType === 'grid' ? 'grid-view' : 'list-view'}`}>
+                      {filteredProducts.map((product) => (
+                        <ProductCard key={product.id} product={product} />
+                      ))}
+                    </div>
+
+                    {/* Pagination */}
+                    <div className="listing-pagination">
+                      <nav className="listing-pagination-nav">
+                        <button className="listing-pagination-button">
+                          Previous
+                        </button>
+                        {[1, 2, 3, 4, 5].map((page) => (
+                          <button
+                            key={page}
+                            className={`listing-pagination-button ${page === 1 ? 'active' : ''}`}
+                          >
+                            {page}
+                          </button>
+                        ))}
+                        <button className="listing-pagination-button">
+                          Next
+                        </button>
+                      </nav>
+                    </div>
+                  </>
+                ) : (
+                  <NoProductsFound />
+                )}
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
   );

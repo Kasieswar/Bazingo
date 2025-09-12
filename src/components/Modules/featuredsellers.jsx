@@ -27,8 +27,8 @@ function featuredsellers() {
   return (
     <div>
       <section className="featured-sellers-section">
-      <h2 className="section-title">Featured Sellers</h2>
-      <p className="section-subtitle">Explore stores from top-rated sellers</p>
+      <h2 className="sec-title">Featured Sellers</h2>
+      <p className="sec-subtitle">Explore stores from top-rated sellers</p>
 
       <div className="sellerss-grid">
         {sellers.map((seller, index) => (
