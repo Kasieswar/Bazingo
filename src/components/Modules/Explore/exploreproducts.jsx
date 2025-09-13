@@ -1,18 +1,14 @@
 import React, { useState, useMemo } from 'react';
 import { Smartphone, Shirt, Utensils, Heart, Dumbbell, BookOpen, Plane, PawPrint, Home,  Palette,  Baby, Laptop, Headphones,Watch,Camera,Monitor, Cpu,HardDrive,Gamepad2,Filter, ChevronDown, Grid, List, Star} from 'lucide-react';
-import '../../Pages/explorepage.css';
-import TshirtVideo from '../../Videos/Tshirt.mp4'
 
 const ExploreProducts = () => {
   const [selectedCategory, setSelectedCategory] = useState(0);
   const [selectedSubCategory, setSelectedSubCategory] = useState(null);
   const [showFilters, setShowFilters] = useState(false);
-  const [viewType, setViewType] = useState('grid');
   const [sortBy, setSortBy] = useState('featured');
   const [wishlistProducts, setWishlistProducts] = useState(new Set());
   const [inquirySent, setInquirySent] = useState(new Set());
   const [playingVideos, setPlayingVideos] = useState(new Set());
-  const [hoveredProduct, setHoveredProduct] = useState(null);
 
   const categories = [
     { 
@@ -208,7 +204,7 @@ const ExploreProducts = () => {
       id: 4,
       name: 'Cotton T-Shirts (Export Quality)',
       image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=300&fit=crop',
-      video: TshirtVideo,
+      video: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4',
       priceRange: '₹120 - ₹180',
       minOrder: 500,
       maxOrder: 50000,
@@ -432,25 +428,46 @@ const ExploreProducts = () => {
   );
 
   const ProductCard = ({ product }) => (
-    <div 
-      className={`listing-product-card ${playingVideos.has(product.id) ? 'video-playing' : ''}`}
-      onMouseEnter={() => setHoveredProduct(product.id)}
-      onMouseLeave={() => setHoveredProduct(null)}
-    >
+    <div className={`listing-product-card ${playingVideos.has(product.id) ? 'video-playing' : ''}`}>
       {/* Video Section */}
       <div className="listing-product-media-section">
         <div className="listing-product-media-container">
           {playingVideos.has(product.id) ? (
-            <video
-              className="listing-product-video"
-              src={product.video}
-              autoPlay
-              muted
-              loop
-              playsInline
-              controls
-              poster={product.image}
-            />
+            // Enhanced video rendering with support for YouTube, Instagram, and local videos
+            product.video.includes("youtube.com") || product.video.includes("youtu.be") ? (
+              <iframe
+                className="listing-product-video"
+                src={
+                  product.video.includes("shorts/")
+                    ? `https://www.youtube.com/embed/${product.video.split("shorts/")[1].split("?")[0]}?autoplay=1&mute=1`
+                    : product.video.replace("watch?v=", "embed/").split("&")[0] + "?autoplay=1&mute=1"
+                }
+                title={product.name}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            ) : product.video.includes("instagram.com") ? (
+              <iframe
+                className="listing-product-video"
+                src={product.video + "embed"}
+                title={product.name}
+                frameBorder="0"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            ) : (
+              <video
+                className="listing-product-video"
+                src={product.video}
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                poster={product.image}
+              />
+            )
           ) : (
             <div className="listing-product-thumbnail">
               <img src={product.image} alt={product.name} className="listing-product-image" />
@@ -467,25 +484,21 @@ const ExploreProducts = () => {
             </div>
           )}
 
-          {/* Badges and wishlist - hidden when video is playing */}
-          {!playingVideos.has(product.id) && (
-            <>
-              <div className="listing-product-badges">
-                <span className="listing-supplier-badge">
-                  {product.supplierType}
-                </span>
-                {product.badges.includes('Export Ready') && <span className="listing-export-badge">Export Ready</span>}
-              </div>
-              
-              <button
-                className={`listing-wishlist-btn ${wishlistProducts.has(product.id) ? 'active' : ''}`}
-                onClick={() => toggleWishlist(product.id)}
-                title="Add to Watchlist"
-              >
-                <i className="fas fa-heart"></i>
-              </button>
-            </>
-          )}
+          {/* Badges and wishlist - always visible */}
+          <div className="listing-product-badges">
+            <span className="listing-supplier-badge">
+              {product.supplierType}
+            </span>
+            {product.badges.includes('Export Ready') && <span className="listing-export-badge">Export Ready</span>}
+          </div>
+          
+          <button
+            className={`listing-wishlist-btn ${wishlistProducts.has(product.id) ? 'active' : ''}`}
+            onClick={() => toggleWishlist(product.id)}
+            title="Add to Watchlist"
+          >
+            <i className="fas fa-heart"></i>
+          </button>
           
           {/* Video controls - only show stop button when video is playing */}
           {playingVideos.has(product.id) && (
@@ -496,16 +509,6 @@ const ExploreProducts = () => {
                 title="Stop Video"
               >
                 <i className="fas fa-stop"></i>
-              </button>
-            </div>
-          )}
-          
-          {/* Quick view overlay - only show on hover when video is not playing */}
-          {!playingVideos.has(product.id) && hoveredProduct === product.id && (
-            <div className="listing-product-overlay">
-              <button className="listing-quick-view-btn">
-                <i className="fas fa-eye"></i>
-                View Details
               </button>
             </div>
           )}
@@ -568,10 +571,6 @@ const ExploreProducts = () => {
         </div>
 
         <div className="listing-action-buttons">
-          <button className="listing-contact-btn">
-            <i className="fas fa-phone"></i>
-            Call Now
-          </button>
           <button
             className={`listing-inquiry-btn ${inquirySent.has(product.id) ? 'sent' : ''}`}
             onClick={() => sendInquiry(product.id)}
@@ -579,6 +578,11 @@ const ExploreProducts = () => {
             <i className="fas fa-comment-dots"></i>
             {inquirySent.has(product.id) ? 'Inquiry Sent' : 'Send Inquiry'}
           </button>
+          <button className="listing-contact-btn">
+            <i className="fas fa-phone"></i>
+            Call Now
+          </button>
+          
         </div>
       </div>
     </div>
@@ -701,22 +705,6 @@ const ExploreProducts = () => {
                   Filters
                 </button>
 
-                {/* View Toggle */}
-                <div className="listing-view-toggle">
-                  <button
-                    onClick={() => setViewType('grid')}
-                    className={`listing-view-button ${viewType === 'grid' ? 'active' : ''}`}
-                  >
-                    <Grid className="listing-button-icon" />
-                  </button>
-                  <button
-                    onClick={() => setViewType('list')}
-                    className={`listing-view-button ${viewType === 'list' ? 'active' : ''}`}
-                  >
-                    <List className="listing-button-icon" />
-                  </button>
-                </div>
-
                 {/* Sort Dropdown */}
                 <div className="listing-sort-dropdown">
                   <select
@@ -752,7 +740,7 @@ const ExploreProducts = () => {
               <div className="listing-products-section">
                 {filteredProducts.length > 0 ? (
                   <>
-                    <div className={`listing-products-grid ${viewType === 'grid' ? 'grid-view' : 'list-view'}`}>
+                    <div className="listing-products-grid grid-view">
                       {filteredProducts.map((product) => (
                         <ProductCard key={product.id} product={product} />
                       ))}
@@ -782,6 +770,7 @@ const ExploreProducts = () => {
                   <NoProductsFound />
                 )}
               </div>
+
             </div>
           </div>
         </section>
@@ -790,4 +779,4 @@ const ExploreProducts = () => {
   );
 };
 
-export default ExploreProducts;
+export default ExploreProducts; 

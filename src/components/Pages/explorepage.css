@@ -1400,22 +1400,23 @@
   transform: none;
 }
 
+/* Video and iframe styling */
 .listing-product-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border: none;
 }
 
-/* OLD PLAY OVERLAY - REMOVED */
-.listing-play-overlay {
-  display: none;
+/* For iframe videos */
+.listing-product-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit: cover;
 }
 
-.listing-play-btn {
-  display: none;
-}
-
-/* NEW CENTER PLAY BUTTON - Always visible */
+/* Center Play Button - Always visible when video not playing */
 .listing-center-play-overlay {
   position: absolute;
   top: 0;
@@ -1425,7 +1426,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Always visible, no opacity transition */
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.listing-product-card:hover .listing-center-play-overlay {
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .listing-center-play-btn {
@@ -1445,6 +1452,7 @@
 .listing-center-play-btn:hover {
   transform: scale(1.1);
   background: white;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
 }
 
 .listing-center-play-icon {
